@@ -1,0 +1,262 @@
+//
+//  aSearch_vc.m
+//  SidebarDemo
+//
+//  Created by indianic on 03/08/15.
+//  Copyright (c) 2015 AppCoda. All rights reserved.
+//
+
+#import "aSearch_vc.h"
+#import "AppDelegate.h"
+#import "MainViewController.h"
+#import "SWRevealViewController.h"
+#import "SidebarTableViewController.h"
+#import "SWRevealViewController.h"
+#import "UIImageView+WebCache.h"
+#import "PlaceInfo.h"
+
+@interface aSearch_vc ()
+{
+    
+    UIView *geopointView;
+    NSMutableArray *Mutearr;
+    
+
+}
+
+@end
+
+@implementation aSearch_vc
+
+
+
+@synthesize aScrollview = _aScrollview;
+
+
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+   
+    [Parse setApplicationId:@"aRdKtgCLpKk9PTOpPgZUHIUutAFDxxOs9vCPIz93" clientKey:@"tAGtNESX10C3fa2sboyMOwO1JMTV9RhMvdyhIjvY"];
+    
+    aPlaceData=[[NSArray alloc]init];
+    
+    PFQuery *aQuery=[[PFQuery alloc]initWithClassName:@"Place_Default"];
+    
+       ////    [aQuery whereKey:@"State" equalTo:@"Rajasthan"];
+    //    [aQuery setLimit:400];
+    //    aQuery.cachePolicy=kPFCachePolicyNetworkElseCache;
+    
+    [aQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            aPlaceData=[NSArray arrayWithArray:objects] ;
+            NSLog(@"%@",aPlaceData);
+            
+            [_AcollectionView reloadData];
+            [_Acollectionviewslider reloadData];
+        }}];
+        
+    
+    
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.aSearchtripbarbtn setTarget: self.revealViewController];
+        [self.aSearchtripbarbtn setAction: @selector( revealToggle: )];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
+
+
+
+//  [_aScrollview setContentSize:(CGSizeMake(1600, _aScrollview.frame.size.height))];
+//    
+//    NSLog(@"%f",_aScrollview.frame.size.height);
+//    
+//    _aScrollview.backgroundColor = [UIColor blueColor];
+//
+   }
+
+
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+
+
+//-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+//    
+//    return 10;
+//
+//}
+//
+//// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+//    
+//    static NSString *identifier = @"Acollectionview";
+//    
+//    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+//    
+//    //UIImageView *collectionImageView = (UIImageView *)[cell viewWithTag:100];
+//    
+//   // collectionImageView.image = [UIImage imageNamed:[Mutearr objectAtIndex:indexPath.row]];
+//    return cell;
+//}
+
+
+
+
+
+- (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
+    if(view.tag==2)
+    {
+   
+    return aPlaceData.count;
+}
+else if(aPlaceData.count>0)
+{
+    return 4;
+}
+else{
+    return 0;
+}
+
+
+}
+
+- (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
+    return 1;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+   if(cv.tag==2)
+   {
+    aPlaceListCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"Acollectionview" forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor whiteColor];
+ 
+   
+    cell.aPlaceCity.text=[[aPlaceData objectAtIndex:indexPath.row] objectForKey:@"City"];
+    cell.aPlaceName.text=[[aPlaceData objectAtIndex:indexPath.row] objectForKey:@"Name"];
+    
+    
+    PFFile *imageFile=[[aPlaceData objectAtIndex:indexPath.row] objectForKey:@"Images"];
+    NSLog(@"%@",imageFile.url);
+    
+   
+    [cell.aPlaceImage sd_setImageWithURL:[NSURL URLWithString:imageFile.url] placeholderImage:[UIImage imageNamed:@"search.png"]];
+    
+       return cell;
+   }
+   
+    
+    aScrollCell *cell=[cv dequeueReusableCellWithReuseIdentifier:@"scrollcell" forIndexPath:indexPath];
+    
+    
+    cell.aScrollCity.text=[[aPlaceData objectAtIndex:indexPath.row] objectForKey:@"City"];
+    cell.aScrollName.text=[[aPlaceData objectAtIndex:indexPath.row] objectForKey:@"Name"];
+    
+    
+    PFFile *imageFile=[[aPlaceData objectAtIndex:indexPath.row] objectForKey:@"Images"];
+    NSLog(@"%@",imageFile.url);
+    
+    
+    [cell.aScrollImage sd_setImageWithURL:[NSURL URLWithString:imageFile.url] placeholderImage:[UIImage imageNamed:@"search.png"]];
+    
+    
+//    PFFile *aFile=object[@"Images"];
+//                 [aFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+    //
+    //                cell.aPlaceImage.image=[UIImage imageWithData:data];
+    //
+    //                }];
+    
+                               // NSData *aData=object[@"Images"];
+                
+                //cell.aPlaceImage.image=[UIImage imageWithData:aData];
+//                
+//                PFFile *aFile=object[@"Images"];
+//                [aFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+//                    
+//                cell.aPlaceImage.image=[UIImage imageWithData:data];
+//                    
+//                }];
+    
+     
+//            
+//            NSLog(@"%@",objects);
+//        } else {
+//            // Log details of the failure
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//        }
+//    }];
+//    
+
+    
+    
+    
+    
+    return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    if(collectionView.tag==2)
+    {
+    return CGSizeMake(145, 145);  // will be w120xh100 or w190x100
+    }
+    return CGSizeMake(320, 210);
+    // if the width is higher, only one image will be shown in a line
+}
+
+
+
+
+#pragma mark collection view cell paddings
+- (UIEdgeInsets)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    if(collectionView.tag==2)
+    {
+    return UIEdgeInsetsMake(10, 10, 5, 10); // top, left, bottom, right
+    }
+    return UIEdgeInsetsMake(0, 0, 0, 0);
+    }
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    
+    return 5.0;
+}
+
+- (IBAction)testbarbtn:(UIBarButtonItem *)sender {
+}
+
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+
+   
+    
+    
+    UIStoryboard *aStory=[UIStoryboard storyboardWithName:@"Main2" bundle:nil];
+    
+    PlaceInfo *placeDetail=[aStory instantiateViewControllerWithIdentifier:@"placeinfo"];
+    
+    placeDetail.array=[aPlaceData objectAtIndex:indexPath.row];
+    
+    
+    [self.navigationController pushViewController:placeDetail animated:YES];
+
+
+}
+
+@end
