@@ -15,7 +15,7 @@
 
 {
     
-    UISearchBar *sBar;
+//    UISearchBar *sBar;
     BOOL isSearchEnabled;
 }
 
@@ -28,9 +28,9 @@
     [super viewDidLoad];
     //self.view.backgroundColor=[UIColor colorWithRed:0.084 green:0.167 blue:0.249 alpha:1.000];
     
-    UITapGestureRecognizer *tapgesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTapFrom:)];
+//    UITapGestureRecognizer *tapgesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTapFrom:)];
     
-    [self.view addGestureRecognizer:tapgesture];
+//    [self.view addGestureRecognizer:tapgesture];
     
     // Do any additional setup after loading the view.
     _aSearchtrip.layer.cornerRadius=_aSearchtrip.bounds.size.width/2;
@@ -42,10 +42,6 @@
     
     self.navigationItem.hidesBackButton=YES;
     
-    sBar =[[UISearchBar alloc]initWithFrame: CGRectMake(45, 10, self.navigationController.navigationBar.bounds.size.width/1.5, self.navigationController.navigationBar.bounds.size.height/2)];
-    
-    
-    
     
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
@@ -56,36 +52,36 @@
     }
     
     
-    UIButton *btn  = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
-    [btn setImage:[UIImage imageNamed:@"asearch.png"] forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(toggleSearchbutton:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+//    UIButton *btn  = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+//    [btn setImage:[UIImage imageNamed:@"asearch.png"] forState:UIControlStateNormal];
+//    [btn addTarget:self action:@selector(toggleSearchbutton:) forControlEvents:UIControlEventTouchUpInside];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
 }
 
 
--(void)toggleSearchbutton:(UIBarButtonItem*)sender{
-    if(!isSearchEnabled){
-        UIButton *btn  = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
-        [btn setImage:[UIImage imageNamed:@"acancel.png"] forState:UIControlStateNormal];
-        [btn addTarget:self action:@selector(toggleSearchbutton:) forControlEvents:UIControlEventTouchUpInside];
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
-        sBar.hidden = NO;
-        
-        [self.navigationController.navigationBar addSubview:sBar];
-        
-    }else{
-        UIButton *btn  = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
-        [btn setImage:[UIImage imageNamed:@"asearch.png"] forState:UIControlStateNormal];
-        [btn addTarget:self action:@selector(toggleSearchbutton:) forControlEvents:UIControlEventTouchUpInside];
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
-        sBar.hidden = YES;
-        [sBar removeFromSuperview];
-        
-        
-        
-    }
-    isSearchEnabled =  !isSearchEnabled;
-}
+//-(void)toggleSearchbutton:(UIBarButtonItem*)sender{
+//    if(!isSearchEnabled){
+//        UIButton *btn  = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+//        [btn setImage:[UIImage imageNamed:@"acancel.png"] forState:UIControlStateNormal];
+//        [btn addTarget:self action:@selector(toggleSearchbutton:) forControlEvents:UIControlEventTouchUpInside];
+//        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+//        sBar.hidden = NO;
+//        
+//        [self.navigationController.navigationBar addSubview:sBar];
+//        
+//    }else{
+//        UIButton *btn  = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+//        [btn setImage:[UIImage imageNamed:@"asearch.png"] forState:UIControlStateNormal];
+//        [btn addTarget:self action:@selector(toggleSearchbutton:) forControlEvents:UIControlEventTouchUpInside];
+//        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+//        sBar.hidden = YES;
+//        [sBar removeFromSuperview];
+//        
+//        
+//        
+//    }
+//    isSearchEnabled =  !isSearchEnabled;
+//}
 
 
 
@@ -96,64 +92,20 @@
 }
 
 
--(void)handleTapFrom:(UITapGestureRecognizer*)sender
-
-{
-    
-    [sBar removeFromSuperview];
-    self.navigationItem.rightBarButtonItem.enabled= YES;
-    UIButton *btn  = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
-    [btn setImage:[UIImage imageNamed:@"asearch.png"] forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(toggleSearchbutton:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
-    sBar.hidden = YES;
-    [sBar removeFromSuperview];
-    
-}
-
-
-
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
-{
-    
-    // self.navigationItem.rightBarButtonItem.enabled= NO;
-    
-    NSLog(@"CLICKED");
-    
-    //self.navigationItem.rightBarButtonItem.enabled = NO;
-    
-    //[searchBar setShowsCancelButton:YES animated:YES];
-    
-    
-}
-
-
--(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
-{
-    //  [searchBar setShowsCancelButton:NO animated:YES];
-    NSLog(@"start");
-    //self.navigationItem.rightBarButtonItem.enabled = YES;
-    //self.navigationItem.rightBarButtonItem.enabled = NO;
-    
-    
-}
-
-
-// called when cancel button pressed
-
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
-    
-    NSLog(@"CLICKED");
-    
-    [sBar removeFromSuperview];
-    self.navigationItem.rightBarButtonItem.enabled = NO;
-    
-    
-    
-}
-
-
-
+//-(void)handleTapFrom:(UITapGestureRecognizer*)sender
+//
+//{
+//    
+//    [sBar removeFromSuperview];
+//    self.navigationItem.rightBarButtonItem.enabled= YES;
+//    UIButton *btn  = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+//    [btn setImage:[UIImage imageNamed:@"asearch.png"] forState:UIControlStateNormal];
+//    [btn addTarget:self action:@selector(toggleSearchbutton:) forControlEvents:UIControlEventTouchUpInside];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+//    sBar.hidden = YES;
+//    [sBar removeFromSuperview];
+//    
+//}
 
 
 
@@ -171,16 +123,9 @@
  // Pass the selected object to the new view controller.
  }
  */
-- (IBAction)aSearchbaritem:(UIBarButtonItem *)sender {
-    
-    
-    sBar.hidden=FALSE;
-    sBar.delegate = self;
-    [self.navigationController.navigationBar addSubview:sBar];
-    sBar.autoresizingMask = 0;
-    [sBar setPlaceholder:@"Search Places"];
-    
-}
+
+
+
 - (IBAction)aAddtrip:(UIButton *)sender {
 }
 

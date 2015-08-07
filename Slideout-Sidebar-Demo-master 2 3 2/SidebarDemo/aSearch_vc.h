@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "aPlaceListCell.h"
 #import "aScrollCell.h"
-@interface aSearch_vc : UIViewController <UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface aSearch_vc : UIViewController <UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate>
 {
     NSArray *aPlaceData;
  
