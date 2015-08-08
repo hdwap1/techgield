@@ -46,6 +46,7 @@
 		A92306851B7584E2001B8077 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92306841B7584E2001B8077 /* MapKit.framework */; };
 		A95E56CA1B72E90100506FEC /* PlaceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A95E56C91B72E90100506FEC /* PlaceInfo.m */; };
 		A96601971B72116C0056ADD9 /* aPlaceListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A96601961B72116C0056ADD9 /* aPlaceListCell.m */; };
+		A975DF681B762D2F004331DA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A975DF671B762D2F004331DA /* CoreLocation.framework */; };
 		A97B9A721B701AF70018A6E2 /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A97B9A711B701AF70018A6E2 /* Main2.storyboard */; };
 		A97B9A761B701BD90018A6E2 /* aSearch_vc.m in Sources */ = {isa = PBXBuildFile; fileRef = A97B9A751B701BD90018A6E2 /* aSearch_vc.m */; };
 		A97B9A791B7050BF0018A6E2 /* acancel.png in Resources */ = {isa = PBXBuildFile; fileRef = A97B9A771B7050BF0018A6E2 /* acancel.png */; };
@@ -152,6 +153,7 @@
 		A95E56C91B72E90100506FEC /* PlaceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceInfo.m; sourceTree = "<group>"; };
 		A96601951B72116C0056ADD9 /* aPlaceListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aPlaceListCell.h; sourceTree = "<group>"; };
 		A96601961B72116C0056ADD9 /* aPlaceListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aPlaceListCell.m; sourceTree = "<group>"; };
+		A975DF671B762D2F004331DA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A97B9A711B701AF70018A6E2 /* Main2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main2.storyboard; sourceTree = "<group>"; };
 		A97B9A741B701BD90018A6E2 /* aSearch_vc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aSearch_vc.h; sourceTree = "<group>"; };
 		A97B9A751B701BD90018A6E2 /* aSearch_vc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aSearch_vc.m; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A975DF681B762D2F004331DA /* CoreLocation.framework in Frameworks */,
 				A92306851B7584E2001B8077 /* MapKit.framework in Frameworks */,
 				A98FDF961B6B95BE00DD1844 /* libsqlite3.0.dylib in Frameworks */,
 				A98FDF941B6B95B700DD1844 /* Security.framework in Frameworks */,
@@ -490,6 +493,7 @@
 		F4090B851A0F67D000651F6F = {
 			isa = PBXGroup;
 			children = (
+				A975DF671B762D2F004331DA /* CoreLocation.framework */,
 				A92306841B7584E2001B8077 /* MapKit.framework */,
 				A95E56C71B72DB8200506FEC /* aSearchmodule */,
 				A9AFDBD51B722E460002D2E9 /* ScrollingCell */,

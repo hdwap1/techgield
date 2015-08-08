@@ -158,5 +158,19 @@
 
 
 - (IBAction)aSwitchaction:(UISwitch *)sender {
+    CLLocation *locate = [[CLLocation alloc]
+                          initWithLatitude:[self.mainviewlatitude.text doubleValue] longitude: [self.mainviewlongitude.text doubleValue]];
+    
+    [geo reverseGeocodeLocation:locate completionHandler:^(NSArray *placemarks, NSError *error) {
+        CLLocationCoordinate2D coordinate=locate.coordinate;
+        MKPointAnnotation *annot = [[MKPointAnnotation alloc] init];
+        annot.coordinate=coordinate;
+        CLPlacemark *mark=[placemarks objectAtIndex:0];
+        
+        annot.title = mark.name;
+        annot.subtitle = mark.country;
+        [self.map1 addAnnotation:annot];
+    }];
+    
 }
 @end

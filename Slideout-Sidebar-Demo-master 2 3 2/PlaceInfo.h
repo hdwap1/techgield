@@ -10,6 +10,7 @@
 #import "aSearch_vc.h"
 #import <Parse/Parse.h>
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface PlaceInfo : ViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
