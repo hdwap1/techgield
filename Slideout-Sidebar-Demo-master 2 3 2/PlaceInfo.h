@@ -12,7 +12,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface PlaceInfo : ViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface PlaceInfo : ViewController <UICollectionViewDataSource, UICollectionViewDelegate,MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *Mainviewscroll;
 @property (weak, nonatomic) IBOutlet UICollectionView *mainviewcollection;
