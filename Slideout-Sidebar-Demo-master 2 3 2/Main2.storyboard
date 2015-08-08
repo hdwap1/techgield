@@ -292,13 +292,13 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2LV-2V-K3F">
-                                        <rect key="frame" x="20" y="188" width="286" height="98"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="Oe6-ib-eMm">
+                                        <rect key="frame" x="20" y="191" width="286" height="101"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -313,13 +313,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="Mainviewscroll" destination="GAy-vt-MbR" id="mFD-fI-bdT"/>
+                        <outlet property="mainplacedescription" destination="Oe6-ib-eMm" id="HC4-DS-5Ex"/>
                         <outlet property="mainviewImageview" destination="2Of-lY-2TL" id="Bl4-xc-PxD"/>
                         <outlet property="mainviewbarbtn" destination="Cow-Ou-bfY" id="WMn-wB-MfT"/>
                         <outlet property="mainviewcity" destination="t7C-Gf-kRY" id="qfx-47-85D"/>
                         <outlet property="mainviewlatitude" destination="dKw-ba-g7f" id="PFv-y6-qCp"/>
                         <outlet property="mainviewlongitude" destination="9FY-gF-oGD" id="h0F-Z6-NBq"/>
                         <outlet property="mainviewname" destination="aGF-QV-EL6" id="La8-yO-OIF"/>
-                        <outlet property="maknviewdescription" destination="2LV-2V-K3F" id="6mx-XX-93u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tHL-Z9-7dQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

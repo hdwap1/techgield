@@ -16,7 +16,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *mainviewImageview;
 @property (weak, nonatomic) IBOutlet UILabel *mainviewname;
 @property (weak, nonatomic) IBOutlet UILabel *mainviewcity;
-@property (weak, nonatomic) IBOutlet UILabel *maknviewdescription;
+
+@property (weak, nonatomic) IBOutlet UITextView *mainplacedescription;
 
 @property (weak, nonatomic) IBOutlet UILabel *mainviewlatitude;
 @property (weak, nonatomic) IBOutlet UILabel *mainviewlongitude;
