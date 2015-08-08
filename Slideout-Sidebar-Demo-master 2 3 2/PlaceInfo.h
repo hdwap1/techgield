@@ -29,6 +29,7 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *aSwitch;
 
+- (IBAction)aSwitchaction:(UISwitch *)sender;
 
 @property (weak, nonatomic) IBOutlet MKMapView *aPlacemap;
 
