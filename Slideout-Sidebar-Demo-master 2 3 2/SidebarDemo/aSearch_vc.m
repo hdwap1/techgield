@@ -57,6 +57,7 @@
             
             [_AcollectionView reloadData];
             [_Acollectionviewslider reloadData];
+            self.aLoadActivity.hidden=YES;
         }}];
     
     

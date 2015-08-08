@@ -11,7 +11,7 @@
 
 @interface PlaceInfo ()
 {
-    
+    CLGeocoder *geo;
 }
 
 @end
@@ -169,7 +169,7 @@
         
         annot.title = mark.name;
         annot.subtitle = mark.country;
-        [self.map1 addAnnotation:annot];
+        [self.aPlacemap addAnnotation:annot];
     }];
     
 }

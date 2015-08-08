@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *Acollectionviewslider;
 @property (weak,nonatomic) NSString *searchtext;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *aLoadActivity;
 
 
 @end
