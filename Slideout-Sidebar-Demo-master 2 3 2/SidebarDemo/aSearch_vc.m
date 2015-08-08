@@ -58,7 +58,14 @@
             [_AcollectionView reloadData];
             [_Acollectionviewslider reloadData];
         }}];
-        
+    
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(City ==  %@)", @"Ahmedabad"];
+    
+    NSArray *filteredArray = [aPlaceData filteredArrayUsingPredicate:predicate];
+    
+    
+    
     self.navigationItem.hidesBackButton=YES;
     
     sBar =[[UISearchBar alloc]initWithFrame: CGRectMake(45, 10, self.navigationController.navigationBar.bounds.size.width/1.5, self.navigationController.navigationBar.bounds.size.height/2)];
