@@ -30,10 +30,10 @@
     }
     
    
+    _mainplacedescription.backgroundColor = [UIColor colorWithWhite:0.902 alpha:1.000];
     
     
-    
-    [_Mainviewscroll setContentSize:(CGSizeMake(_Mainviewscroll.frame.size.width,850))];
+    [_Mainviewscroll setContentSize:(CGSizeMake(_Mainviewscroll.frame.size.width,980))];
     
     NSLog(@"%f",_Mainviewscroll.frame.size.height);
     
@@ -156,4 +156,6 @@
 
 #pragma mark - Navigation
 
+- (IBAction)aSwitchaction:(UISwitch *)sender {
+}
 @end

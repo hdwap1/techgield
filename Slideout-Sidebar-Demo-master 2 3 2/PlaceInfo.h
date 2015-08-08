@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "aSearch_vc.h"
 #import <Parse/Parse.h>
+#import <MapKit/MapKit.h>
+
 @interface PlaceInfo : ViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *Mainviewscroll;
@@ -25,7 +27,13 @@
 
 - (IBAction)mainviewbarbtnaction:(UIBarButtonItem *)sender;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *aSwitch;
 
+- (IBAction)aSwitchaction:(UISwitch *)sender;
+
+@property (weak, nonatomic) IBOutlet MKMapView *aPlacemap;
+
+@property (weak, nonatomic) IBOutlet UILabel *mainviewstate;
 
 @property (weak, nonatomic) IBOutlet UIImageView *aPlaceInfoImage;
 @property (strong,nonatomic) PFObject *array;

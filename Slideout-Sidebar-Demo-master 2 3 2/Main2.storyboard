@@ -153,7 +153,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="GAy-vt-MbR">
-                                <rect key="frame" x="0.0" y="282" width="320" height="471"/>
+                                <rect key="frame" x="0.0" y="282" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cN4-KK-QHo">
@@ -251,9 +251,12 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="eOi-on-GH8">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="eOi-on-GH8">
                                         <rect key="frame" x="154" y="415" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="aSwitchaction:" destination="SLm-mX-LKM" eventType="valueChanged" id="9jJ-np-Y7f"/>
+                                        </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cJf-GI-5ax">
                                         <rect key="frame" x="0.0" y="400" width="320" height="2"/>
@@ -299,6 +302,18 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="w4R-wm-bIg">
+                                        <rect key="frame" x="0.0" y="450" width="320" height="2"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="Hgn-FE-wim">
+                                        <rect key="frame" x="7" y="465" width="305" height="210"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </mapView>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -313,6 +328,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="Mainviewscroll" destination="GAy-vt-MbR" id="mFD-fI-bdT"/>
+                        <outlet property="aPlacemap" destination="Hgn-FE-wim" id="CnW-xf-m1D"/>
+                        <outlet property="aSwitch" destination="GAy-vt-MbR" id="vfA-Oo-8MQ"/>
+                        <outlet property="aSwitchaction" destination="eOi-on-GH8" id="SGa-zg-ZNw"/>
                         <outlet property="mainplacedescription" destination="Oe6-ib-eMm" id="HC4-DS-5Ex"/>
                         <outlet property="mainviewImageview" destination="2Of-lY-2TL" id="Bl4-xc-PxD"/>
                         <outlet property="mainviewbarbtn" destination="Cow-Ou-bfY" id="WMn-wB-MfT"/>
@@ -320,6 +338,7 @@
                         <outlet property="mainviewlatitude" destination="dKw-ba-g7f" id="PFv-y6-qCp"/>
                         <outlet property="mainviewlongitude" destination="9FY-gF-oGD" id="h0F-Z6-NBq"/>
                         <outlet property="mainviewname" destination="aGF-QV-EL6" id="La8-yO-OIF"/>
+                        <outlet property="mainviewstate" destination="9Zn-x3-Ucs" id="8jZ-D2-iik"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tHL-Z9-7dQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
