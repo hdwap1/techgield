@@ -330,7 +330,6 @@
                         <outlet property="Mainviewscroll" destination="GAy-vt-MbR" id="mFD-fI-bdT"/>
                         <outlet property="aPlacemap" destination="Hgn-FE-wim" id="CnW-xf-m1D"/>
                         <outlet property="aSwitch" destination="GAy-vt-MbR" id="vfA-Oo-8MQ"/>
-                        <outlet property="aSwitchaction" destination="eOi-on-GH8" id="SGa-zg-ZNw"/>
                         <outlet property="mainplacedescription" destination="Oe6-ib-eMm" id="HC4-DS-5Ex"/>
                         <outlet property="mainviewImageview" destination="2Of-lY-2TL" id="Bl4-xc-PxD"/>
                         <outlet property="mainviewbarbtn" destination="Cow-Ou-bfY" id="WMn-wB-MfT"/>
