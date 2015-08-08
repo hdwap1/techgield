@@ -155,17 +155,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="My Travel Experience" id="PL4-ln-Z8C">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="DJB-Dc-VO5"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="JaP-In-Lrd">
-                            <color key="tintColor" red="0.019607843140000001" green="0.62352941179999999" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="aSearchbaritem:" destination="Z2I-Sz-A3d" id="vjV-Mj-mJi"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="aAddtrip" destination="5nB-oZ-P8e" id="Jwf-p0-CeY"/>
                         <outlet property="aNearme" destination="Rk6-s7-GsS" id="B9h-os-eCO"/>
-                        <outlet property="aSearchbarbtn" destination="JaP-In-Lrd" id="ZMi-kM-0It"/>
                         <outlet property="aSearchtrip" destination="KHn-uF-ErV" id="zFc-BY-Ml4"/>
                         <outlet property="sidebarButton" destination="DJB-Dc-VO5" id="dGO-KG-iZR"/>
                     </connections>

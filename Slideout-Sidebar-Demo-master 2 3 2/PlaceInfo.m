@@ -29,6 +29,7 @@
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
     
+   
     
     
     
@@ -36,7 +37,7 @@
     
     NSLog(@"%f",_Mainviewscroll.frame.size.height);
     
-    _Mainviewscroll.backgroundColor = [UIColor whiteColor];
+     _Mainviewscroll.backgroundColor = [UIColor colorWithWhite:0.902 alpha:1.000];
 //    NSLog(@"%@",aSearch.aselectedPlace);
 
         //NSLog(@"%@",aSearch.aselectedPlace);

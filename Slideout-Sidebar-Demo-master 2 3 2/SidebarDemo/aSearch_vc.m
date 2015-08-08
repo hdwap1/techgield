@@ -20,6 +20,8 @@
     
     UIView *geopointView;
     NSMutableArray *Mutearr;
+    UISearchBar *sBar;
+    BOOL isSearchEnabled;
     
 
 }
@@ -57,7 +59,9 @@
             [_Acollectionviewslider reloadData];
         }}];
         
+    self.navigationItem.hidesBackButton=YES;
     
+    sBar =[[UISearchBar alloc]initWithFrame: CGRectMake(45, 10, self.navigationController.navigationBar.bounds.size.width/1.5, self.navigationController.navigationBar.bounds.size.height/2)];
     
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
@@ -67,6 +71,36 @@
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
 
+        UIButton *btn  = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+        [btn setImage:[UIImage imageNamed:@"asearch.png"] forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(toggleSearchbutton:) forControlEvents:UIControlEventTouchUpInside];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+}
+
+
+-(void)toggleSearchbutton:(UIBarButtonItem*)sender{
+    if(!isSearchEnabled){
+        UIButton *btn  = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+        [btn setImage:[UIImage imageNamed:@"acancel.png"] forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(toggleSearchbutton:) forControlEvents:UIControlEventTouchUpInside];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+        sBar.hidden = NO;
+
+        [self.navigationController.navigationBar addSubview:sBar];
+
+    }else{
+        UIButton *btn  = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+        [btn setImage:[UIImage imageNamed:@"asearch.png"] forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(toggleSearchbutton:) forControlEvents:UIControlEventTouchUpInside];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
+        sBar.hidden = YES;
+        [sBar removeFromSuperview];
+
+
+
+    }
+    isSearchEnabled =  !isSearchEnabled;
+}
 
 
 //  [_aScrollview setContentSize:(CGSizeMake(1600, _aScrollview.frame.size.height))];
@@ -75,7 +109,7 @@
 //    
 //    _aScrollview.backgroundColor = [UIColor blueColor];
 //
-   }
+
 
 
 
@@ -258,5 +292,59 @@ else{
 
 
 }
+
+
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    
+    // self.navigationItem.rightBarButtonItem.enabled= NO;
+    
+    NSLog(@"CLICKED");
+    
+    //self.navigationItem.rightBarButtonItem.enabled = NO;
+    
+    //[searchBar setShowsCancelButton:YES animated:YES];
+    
+    
+}
+
+
+-(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    //  [searchBar setShowsCancelButton:NO animated:YES];
+    NSLog(@"start");
+    //self.navigationItem.rightBarButtonItem.enabled = YES;
+    //self.navigationItem.rightBarButtonItem.enabled = NO;
+    
+    
+}
+
+
+// called when cancel button pressed
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    
+    NSLog(@"CLICKED");
+    
+    [sBar removeFromSuperview];
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+    
+    
+    
+}
+
+
+- (IBAction)aSearchbaritem:(UIBarButtonItem *)sender {
+    
+    
+    sBar.hidden=FALSE;
+    sBar.delegate = self;
+    [self.navigationController.navigationBar addSubview:sBar];
+    sBar.autoresizingMask = 0;
+    [sBar setPlaceholder:@"Search Places"];
+    
+}
+
 
 @end
