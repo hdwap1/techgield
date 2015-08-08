@@ -292,7 +292,12 @@ else{
 
 
 }
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+    //Remove all objects first.
+   // [self sea:_searchtext];
 
+}
 
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
@@ -304,7 +309,7 @@ else{
     
     //self.navigationItem.rightBarButtonItem.enabled = NO;
     
-    //[searchBar setShowsCancelButton:YES animated:YES];
+    [searchBar setShowsCancelButton:YES animated:YES];
     
     
 }
@@ -312,7 +317,7 @@ else{
 
 -(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
 {
-    //  [searchBar setShowsCancelButton:NO animated:YES];
+      [searchBar setShowsCancelButton:NO animated:YES];
     NSLog(@"start");
     //self.navigationItem.rightBarButtonItem.enabled = YES;
     //self.navigationItem.rightBarButtonItem.enabled = NO;
