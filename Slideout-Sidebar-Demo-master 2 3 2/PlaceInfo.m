@@ -155,6 +155,5 @@
 
 #pragma mark - Navigation
 
-- (IBAction)aSwitchaction:(UISwitch *)sender {
-}
+
 @end
