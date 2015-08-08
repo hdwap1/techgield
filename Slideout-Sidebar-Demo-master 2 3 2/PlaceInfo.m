@@ -42,11 +42,20 @@
 
         //NSLog(@"%@",aSearch.aselectedPlace);
     
+    self.mainviewname.text=[self.array objectForKey:@"Name"];
+    self.mainviewcity.text=[self.array objectForKey:@"City"];
+    self.maknviewdescription.text=[self.array objectForKey:@"Description"];
+    self.mainviewlatitude.text=[NSString stringWithFormat:@"%@",[self.array objectForKey:@"Lattitude"]];
+    self.mainviewlongitude.text=[NSString stringWithFormat:@"%@",[self.array objectForKey:@"Longitude"]];
+    
+    
+    
     PFFile *aFile=[self.array objectForKey:@"Images"];
     
                     [aFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
     
                         self.mainviewImageview.image=[UIImage imageWithData:data];
+                        
     
                     }];
 }
