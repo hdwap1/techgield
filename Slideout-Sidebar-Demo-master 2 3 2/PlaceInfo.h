@@ -8,11 +8,13 @@
 
 #import "ViewController.h"
 #import "aSearch_vc.h"
+#import "aMapview_VC.h"
 #import <Parse/Parse.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
 @interface PlaceInfo : ViewController <UICollectionViewDataSource, UICollectionViewDelegate, CLLocationManagerDelegate>
+
 
 @property (weak, nonatomic) IBOutlet UIScrollView *Mainviewscroll;
 @property (weak, nonatomic) IBOutlet UICollectionView *mainviewcollection;
@@ -41,6 +43,9 @@
 
 @property (strong, nonatomic) IBOutlet UIView *aMapUIview;
 @property (weak, nonatomic) IBOutlet MKMapView *aMapviewoutlet;
+
+
+@property (weak, nonatomic) IBOutlet MKMapView *SecondMapview;
 
 
 @end

@@ -8,6 +8,7 @@
 
 #import "PlaceInfo.h"
 #import "SWRevealViewController.h"
+#import "aMapview_VC.h"
 
 @interface PlaceInfo ()
 {
@@ -20,8 +21,10 @@
 
 @implementation PlaceInfo
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     
     aManager=[[CLLocationManager alloc]init];
     aManager.delegate=self;
@@ -52,7 +55,9 @@
     
     [_Mainviewscroll setContentSize:(CGSizeMake(_Mainviewscroll.frame.size.width,980))];
     
-    _Mainviewscroll.backgroundColor = [UIColor colorWithWhite:0.750 alpha:1.000];
+    _Mainviewscroll.backgroundColor = [UIColor whiteColor];
+    
+    
     //    NSLog(@"%@",aSearch.aselectedPlace);
     
     //NSLog(@"%@",aSearch.aselectedPlace);
@@ -71,7 +76,6 @@
     [aFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         
         self.mainviewImageview.image=[UIImage imageWithData:data];
-        
         
     }];
 }
@@ -173,6 +177,8 @@
 
 
 - (IBAction)aSwitchaction:(UISwitch *)sender {
+    
+    
     CLLocation *locate = [[CLLocation alloc]
                           initWithLatitude:[self.mainviewlatitude.text doubleValue] longitude: [self.mainviewlongitude.text doubleValue]];
     
@@ -187,11 +193,22 @@
         //        [self.aPlacemap addAnnotation:annot];
         //        [_aPlacemap setCenterCoordinate:coordinate animated:YES];
         
+        
         [self.aMapviewoutlet addAnnotation:annot];
+       // [self.SecondMapview addAnnotation:annot];
+        
+        //[_SecondMapview setCenterCoordinate:coordinate animated:YES];
+        
+        
+        // mapview controller
+        
+        
+        
+        
+//         map view as a sub view
+        
         [_aMapviewoutlet setCenterCoordinate:coordinate animated:YES];
-        
         [_aMapUIview addSubview:_aMapviewoutlet];
-        
         [self.view addSubview:_aMapUIview];
         
         //        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:self action:@selector(toggleSearchbutton:)];
@@ -211,10 +228,10 @@
     
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
 
--(void)viewDidDisappear:(BOOL)animated{
-    
-    
+[_aSwitchoutlet setOn:NO animated:YES];
+    NSLog(@"viewWillDisappear");
 }
 
 
