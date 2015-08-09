@@ -12,7 +12,7 @@
 @interface aSearch_vc : UIViewController <UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate>
 {
     NSArray *aPlaceData;
- 
+    
 }
 //-(void)centerScrollViewContents;
 //-(void)scrollViewDoubleTapped:(UITapGestureRecognizer*)recognizer;
@@ -21,7 +21,6 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *aSearchtripbarbtn;
 @property (weak, nonatomic) IBOutlet UIScrollView *aScrollview;
-
 
 @property (weak, nonatomic) IBOutlet UICollectionView *Acollectionviewslider;
 @property (weak,nonatomic) NSString *searchtext;

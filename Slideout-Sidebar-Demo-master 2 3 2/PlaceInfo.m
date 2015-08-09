@@ -12,6 +12,8 @@
 @interface PlaceInfo ()
 {
     CLGeocoder *geo;
+    CLLocationManager *aManager;
+    
 }
 
 @end
@@ -21,6 +23,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    aManager=[[CLLocationManager alloc]init];
+    aManager.delegate=self;
+    if([aManager respondsToSelector:@selector(requestAlwaysAuthorization)])
+    {
+        [aManager requestAlwaysAuthorization];
+    }
+    
+    [aManager startUpdatingLocation];
+    geo=[[CLGeocoder alloc]init];
+    
+    _aPlacemap.layer.cornerRadius=5;
+    _aPlacemap.layer.borderWidth=50;
+    _aPlacemap.layer.borderColor= (__bridge CGColorRef)([UIColor colorWithRed:0.168 green:0.493 blue:1.000 alpha:1.000]);
+    
+    
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
@@ -29,18 +46,16 @@
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
     
-   
-    _mainplacedescription.backgroundColor = [UIColor colorWithWhite:0.902 alpha:1.000];
     
+    
+    _mainplacedescription.backgroundColor = [UIColor colorWithWhite:0.902 alpha:1.000];
     
     [_Mainviewscroll setContentSize:(CGSizeMake(_Mainviewscroll.frame.size.width,980))];
     
-    NSLog(@"%f",_Mainviewscroll.frame.size.height);
+    _Mainviewscroll.backgroundColor = [UIColor colorWithWhite:0.750 alpha:1.000];
+    //    NSLog(@"%@",aSearch.aselectedPlace);
     
-     _Mainviewscroll.backgroundColor = [UIColor colorWithWhite:0.902 alpha:1.000];
-//    NSLog(@"%@",aSearch.aselectedPlace);
-
-        //NSLog(@"%@",aSearch.aselectedPlace);
+    //NSLog(@"%@",aSearch.aselectedPlace);
     
     self.mainviewname.text=[self.array objectForKey:@"Name"];
     self.mainviewcity.text=[self.array objectForKey:@"City"];
@@ -53,29 +68,12 @@
     
     PFFile *aFile=[self.array objectForKey:@"Images"];
     
-                    [aFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-    
-                        self.mainviewImageview.image=[UIImage imageWithData:data];
-                        
-    
-                    }];
-    
-    
-    CLLocation *locate = [[CLLocation alloc]
-                          initWithLatitude:[self.mainviewlatitude.text doubleValue] longitude: [self.mainviewlongitude.text doubleValue]];
-    
-    [geo reverseGeocodeLocation:locate completionHandler:^(NSArray *placemarks, NSError *error) {
-        CLLocationCoordinate2D coordinate=locate.coordinate;
-        MKPointAnnotation *annot = [[MKPointAnnotation alloc] init];
-        annot.coordinate=coordinate;
-        CLPlacemark *mark=[placemarks objectAtIndex:0];
+    [aFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         
-        annot.title = mark.name;
-        annot.subtitle = mark.country;
-        [self.aPlacemap addAnnotation:annot];
+        self.mainviewImageview.image=[UIImage imageWithData:data];
+        
+        
     }];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -175,6 +173,50 @@
 
 
 - (IBAction)aSwitchaction:(UISwitch *)sender {
- 
+    CLLocation *locate = [[CLLocation alloc]
+                          initWithLatitude:[self.mainviewlatitude.text doubleValue] longitude: [self.mainviewlongitude.text doubleValue]];
+    
+    [geo reverseGeocodeLocation:locate completionHandler:^(NSArray *placemarks, NSError *error) {
+        CLLocationCoordinate2D coordinate=locate.coordinate;
+        MKPointAnnotation *annot = [[MKPointAnnotation alloc] init];
+        annot.coordinate=coordinate;
+        CLPlacemark *mark=[placemarks objectAtIndex:0];
+        
+        annot.title = mark.name;
+        annot.subtitle = mark.country;
+        //        [self.aPlacemap addAnnotation:annot];
+        //        [_aPlacemap setCenterCoordinate:coordinate animated:YES];
+        
+        [self.aMapviewoutlet addAnnotation:annot];
+        [_aMapviewoutlet setCenterCoordinate:coordinate animated:YES];
+        
+        [_aMapUIview addSubview:_aMapviewoutlet];
+        
+        [self.view addSubview:_aMapUIview];
+        
+        //        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:self action:@selector(toggleSearchbutton:)];
+        //        self.navigationItem.leftBarButtonItem = backButton;
+        
+        
+        
+    }];
+    
 }
+
+-(void)toggleSearchbutton:(UIBarButtonItem*)sender{
+    [_aMapUIview removeFromSuperview];
+    
+    [_aSwitchoutlet setOn:NO animated:YES];
+    
+    
+}
+
+
+-(void)viewDidDisappear:(BOOL)animated{
+    
+    
+}
+
+
+
 @end

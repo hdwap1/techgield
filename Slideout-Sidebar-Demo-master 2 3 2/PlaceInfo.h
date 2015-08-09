@@ -12,7 +12,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface PlaceInfo : ViewController <UICollectionViewDataSource, UICollectionViewDelegate,MKMapViewDelegate>
+@interface PlaceInfo : ViewController <UICollectionViewDataSource, UICollectionViewDelegate, CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *Mainviewscroll;
 @property (weak, nonatomic) IBOutlet UICollectionView *mainviewcollection;
@@ -28,7 +28,7 @@
 
 - (IBAction)mainviewbarbtnaction:(UIBarButtonItem *)sender;
 
-@property (weak, nonatomic) IBOutlet UIScrollView *aSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *aSwitchoutlet;
 
 - (IBAction)aSwitchaction:(UISwitch *)sender;
 
@@ -38,4 +38,9 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *aPlaceInfoImage;
 @property (strong,nonatomic) PFObject *array;
+
+@property (strong, nonatomic) IBOutlet UIView *aMapUIview;
+@property (weak, nonatomic) IBOutlet MKMapView *aMapviewoutlet;
+
+
 @end

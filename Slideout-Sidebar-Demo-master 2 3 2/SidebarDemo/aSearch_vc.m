@@ -32,8 +32,6 @@
 
 
 
-@synthesize aScrollview = _aScrollview;
-
 
 
 
