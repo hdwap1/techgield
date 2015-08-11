@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SidebarTableViewController : UITableViewController
+@property (strong, nonatomic) IBOutlet UITableView *aSidebartableview;
 
 @end

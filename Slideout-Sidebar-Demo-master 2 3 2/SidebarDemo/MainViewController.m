@@ -10,6 +10,7 @@
 #import "SWRevealViewController.h"
 #import "addTripHome_vc.h"
 #import "aSearch_vc.h"
+#import "AppDelegate.h"
 
 @interface MainViewController ()<UITextFieldDelegate, UIGestureRecognizerDelegate>
 
@@ -26,6 +27,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+  
+    
+    
     //self.view.backgroundColor=[UIColor colorWithRed:0.084 green:0.167 blue:0.249 alpha:1.000];
     
 //    UITapGestureRecognizer *tapgesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTapFrom:)];
@@ -42,7 +47,6 @@
     
     self.navigationItem.hidesBackButton=YES;
     
-    
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
@@ -50,6 +54,7 @@
         [self.sidebarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
+
     
     
 //    UIButton *btn  = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];

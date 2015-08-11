@@ -8,6 +8,7 @@
 
 #import "aLaunch_vc.h"
 #import "MainViewController.h"
+#import "AppDelegate.h"
 
 @interface aLaunch_vc ()
 
@@ -19,6 +20,8 @@
     [super viewDidLoad];
     
     self.navigationController.navigationBar.hidden=TRUE;
+    
+    
     
 //    self.navigationController.navigationBar.hidden=FALSE;
 //    self.navigationController.navigationBarHidden=TRUE;
@@ -56,6 +59,10 @@ self.navigationController.navigationBar.hidden=TRUE;
     
     MainViewController *main=[self.storyboard instantiateViewControllerWithIdentifier:@"mainvc"];
     main.navigationController.navigationBar.hidden=NO;
+    
+    AppDelegate *appDelegate = (AppDelegate*) [UIApplication sharedApplication].delegate;
+    
+    appDelegate.userstate = TRUE;
     
 }
 @end
