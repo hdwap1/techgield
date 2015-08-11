@@ -8,7 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface aProfilevc : UIViewController
+@interface aProfilevc : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *aProfilevcbarbtn;
+@property (weak, nonatomic) IBOutlet UIImageView *aUserprofilepic;
+@property (weak, nonatomic) IBOutlet UICollectionView *aCollectionviewoutlet;
+
+@property (weak, nonatomic) IBOutlet UICollectionView *aProfilecollectionview;
+
+@property (weak, nonatomic) IBOutlet UILabel *aProfileusercity;
+@property (weak, nonatomic) IBOutlet UILabel *aProfileusername;
+@property (weak, nonatomic) IBOutlet UIButton *aProfilefollow;
+- (IBAction)aProfilefollowaction:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *aProfilecontact;
+- (IBAction)aProfilecontactaction:(UIButton *)sender;
 
 @end

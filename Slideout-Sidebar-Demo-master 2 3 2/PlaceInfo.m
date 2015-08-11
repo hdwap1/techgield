@@ -8,18 +8,41 @@
 
 #import "PlaceInfo.h"
 #import "SWRevealViewController.h"
+#import "aMapview_VC.h"
 
 @interface PlaceInfo ()
 {
     CLGeocoder *geo;
+<<<<<<< HEAD
+=======
+    CLLocationManager *aManager;
+    
+>>>>>>> 927b9fcd8ec3c43db788d71ce8ad1745c510be4f
 }
 
 @end
 
 @implementation PlaceInfo
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    
+    aManager=[[CLLocationManager alloc]init];
+    aManager.delegate=self;
+    if([aManager respondsToSelector:@selector(requestAlwaysAuthorization)])
+    {
+        [aManager requestAlwaysAuthorization];
+    }
+    
+    [aManager startUpdatingLocation];
+    geo=[[CLGeocoder alloc]init];
+    
+    _aPlacemap.layer.cornerRadius=5;
+    _aPlacemap.layer.borderWidth=50;
+    _aPlacemap.layer.borderColor= (__bridge CGColorRef)([UIColor colorWithRed:0.168 green:0.493 blue:1.000 alpha:1.000]);
+    
     
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
@@ -29,18 +52,18 @@
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
     
-   
-    _mainplacedescription.backgroundColor = [UIColor colorWithWhite:0.902 alpha:1.000];
     
+    
+    _mainplacedescription.backgroundColor = [UIColor colorWithWhite:0.902 alpha:1.000];
     
     [_Mainviewscroll setContentSize:(CGSizeMake(_Mainviewscroll.frame.size.width,980))];
     
-    NSLog(@"%f",_Mainviewscroll.frame.size.height);
+    _Mainviewscroll.backgroundColor = [UIColor whiteColor];
     
-     _Mainviewscroll.backgroundColor = [UIColor colorWithWhite:0.902 alpha:1.000];
-//    NSLog(@"%@",aSearch.aselectedPlace);
-
-        //NSLog(@"%@",aSearch.aselectedPlace);
+    
+    //    NSLog(@"%@",aSearch.aselectedPlace);
+    
+    //NSLog(@"%@",aSearch.aselectedPlace);
     
     self.mainviewname.text=[self.array objectForKey:@"Name"];
     self.mainviewcity.text=[self.array objectForKey:@"City"];
@@ -53,12 +76,11 @@
     
     PFFile *aFile=[self.array objectForKey:@"Images"];
     
-                    [aFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-    
-                        self.mainviewImageview.image=[UIImage imageWithData:data];
-                        
-    
-                    }];
+    [aFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        
+        self.mainviewImageview.image=[UIImage imageWithData:data];
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -158,6 +180,8 @@
 
 
 - (IBAction)aSwitchaction:(UISwitch *)sender {
+    
+    
     CLLocation *locate = [[CLLocation alloc]
                           initWithLatitude:[self.mainviewlatitude.text doubleValue] longitude: [self.mainviewlongitude.text doubleValue]];
     
@@ -169,8 +193,54 @@
         
         annot.title = mark.name;
         annot.subtitle = mark.country;
+<<<<<<< HEAD
         [self.aPlacemap addAnnotation:annot];
+=======
+        //        [self.aPlacemap addAnnotation:annot];
+        //        [_aPlacemap setCenterCoordinate:coordinate animated:YES];
+        
+        
+        [self.aMapviewoutlet addAnnotation:annot];
+       // [self.SecondMapview addAnnotation:annot];
+        
+        //[_SecondMapview setCenterCoordinate:coordinate animated:YES];
+        
+        
+        // mapview controller
+        
+        
+        
+        
+//         map view as a sub view
+        
+        [_aMapviewoutlet setCenterCoordinate:coordinate animated:YES];
+        [_aMapUIview addSubview:_aMapviewoutlet];
+        [self.view addSubview:_aMapUIview];
+        
+        //        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:self action:@selector(toggleSearchbutton:)];
+        //        self.navigationItem.leftBarButtonItem = backButton;
+        
+        
+        
+>>>>>>> 927b9fcd8ec3c43db788d71ce8ad1745c510be4f
     }];
     
 }
+
+-(void)toggleSearchbutton:(UIBarButtonItem*)sender{
+    [_aMapUIview removeFromSuperview];
+    
+    [_aSwitchoutlet setOn:NO animated:YES];
+    
+    
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+
+[_aSwitchoutlet setOn:NO animated:YES];
+    NSLog(@"viewWillDisappear");
+}
+
+
+
 @end

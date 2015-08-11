@@ -14,6 +14,7 @@
 #import "SWRevealViewController.h"
 #import "UIImageView+WebCache.h"
 #import "PlaceInfo.h"
+#import "aMapview_VC.h"
 
 @interface aSearch_vc ()
 {
@@ -31,8 +32,6 @@
 @implementation aSearch_vc
 
 
-
-@synthesize aScrollview = _aScrollview;
 
 
 
@@ -57,8 +56,16 @@
             
             [_AcollectionView reloadData];
             [_Acollectionviewslider reloadData];
+            self.aLoadActivity.hidden=YES;
         }}];
-        
+    
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(City ==  %@)", @"Ahmedabad"];
+    
+    NSArray *filteredArray = [aPlaceData filteredArrayUsingPredicate:predicate];
+    
+    
+    
     self.navigationItem.hidesBackButton=YES;
     
     sBar =[[UISearchBar alloc]initWithFrame: CGRectMake(45, 10, self.navigationController.navigationBar.bounds.size.width/1.5, self.navigationController.navigationBar.bounds.size.height/2)];
@@ -278,8 +285,6 @@ else{
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 
-   
-    
     
     UIStoryboard *aStory=[UIStoryboard storyboardWithName:@"Main2" bundle:nil];
     
@@ -287,6 +292,9 @@ else{
     
     placeDetail.array=[aPlaceData objectAtIndex:indexPath.row];
     
+//    aMapview_VC *mapviews=[aStory instantiateViewControllerWithIdentifier:@"mapviewvc"];
+//    
+//    mapviews.array=[aPlaceData objectAtIndex:indexPath.row];
     
     [self.navigationController pushViewController:placeDetail animated:YES];
 

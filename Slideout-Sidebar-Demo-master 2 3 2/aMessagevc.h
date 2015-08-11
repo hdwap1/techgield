@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface aMessagevc : UIViewController
+@interface aMessagevc : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *aMsgbarbtn;
+@property (weak, nonatomic) IBOutlet UITableView *aMessagetableview;
 
 @end
