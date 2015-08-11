@@ -26,7 +26,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+   // self.lat.text=_alat;
+    //self.lonng.text=_along;
+    NSLog(@"%@",_alat);
     aManager=[[CLLocationManager alloc]init];
     aManager.delegate=self;
     if([aManager respondsToSelector:@selector(requestAlwaysAuthorization)])

@@ -7,7 +7,7 @@
 //
 
 #import "PlaceInfo.h"
-#import "SWRevealViewController.h"
+
 #import "aMapview_VC.h"
 
 @interface PlaceInfo ()
@@ -44,15 +44,15 @@
     _aPlacemap.layer.borderColor= (__bridge CGColorRef)([UIColor colorWithRed:0.168 green:0.493 blue:1.000 alpha:1.000]);
     
     
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
-    {
-        [self.mainviewbarbtn setTarget: self.revealViewController];
-        [self.mainviewbarbtn setAction: @selector( revealToggle: )];
-        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    }
-    
-    
+//    SWRevealViewController *revealViewController = self.revealViewController;
+//    if ( revealViewController )
+//    {
+//        [self.mainviewbarbtn setTarget: self.revealViewController];
+//        [self.mainviewbarbtn setAction: @selector( revealToggle: )];
+//        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+//    }
+//    
+    self.navigationController.navigationBar.hidden=false;
     
     _mainplacedescription.backgroundColor = [UIColor colorWithWhite:0.902 alpha:1.000];
     
@@ -81,6 +81,10 @@
         self.mainviewImageview.image=[UIImage imageWithData:data];
         
     }];
+    UIStoryboard *aStory=[UIStoryboard storyboardWithName:@"Main2" bundle:nil];
+     aMapview_VC *mapviews=[aStory instantiateViewControllerWithIdentifier:@"mapviewvc"];
+    mapviews.alat=[NSString stringWithFormat:@"%@",[self.array objectForKey:@"Longitude"]];
+    mapviews.along=[NSString stringWithFormat:@"%@",[self.array objectForKey:@"Longitude"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -196,8 +200,8 @@
 
         [self.aPlacemap addAnnotation:annot];
 
-        //        [self.aPlacemap addAnnotation:annot];
-        //        [_aPlacemap setCenterCoordinate:coordinate animated:YES];
+                [self.aPlacemap addAnnotation:annot];
+               [_aPlacemap setCenterCoordinate:coordinate animated:YES];
         
         
         [self.aMapviewoutlet addAnnotation:annot];
@@ -214,8 +218,8 @@
 //         map view as a sub view
         
         [_aMapviewoutlet setCenterCoordinate:coordinate animated:YES];
-        [_aMapUIview addSubview:_aMapviewoutlet];
-        [self.view addSubview:_aMapUIview];
+       // [_aMapUIview addSubview:_aMapviewoutlet];
+       // [self.view addSubview:_aMapUIview];
         
         //        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleDone target:self action:@selector(toggleSearchbutton:)];
         //        self.navigationItem.leftBarButtonItem = backButton;
