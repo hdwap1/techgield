@@ -10,7 +10,8 @@
 #import <Parse/Parse.h>
 #import "SWRevealViewController.h"
 #import "aProfilevc.h"
-@interface signup_vc : UIViewController
+@interface signup_vc : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *aSignupName;
 @property (weak, nonatomic) IBOutlet UITextField *aSignupEmail;
 @property (weak, nonatomic) IBOutlet UITextField *aSignupPassword;
@@ -19,10 +20,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *aSignuBbtn;
 - (IBAction)signupAct:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *aProfileOptionSelection;
-@property (weak, nonatomic) IBOutlet UIImageView *aProfileImage;
-@property (weak, nonatomic) IBOutlet UILabel *aProfilePicLabel;
 
-
-
+@property (weak, nonatomic) IBOutlet UIPickerView *aPickerviewoutlet;
+@property (weak, nonatomic) IBOutlet UIView *aPickerviewUI;
+- (IBAction)addstateaction:(UIButton *)sender;
 
 @end

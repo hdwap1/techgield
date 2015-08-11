@@ -67,7 +67,7 @@
     
     self.mainviewname.text=[self.array objectForKey:@"Name"];
     self.mainviewcity.text=[self.array objectForKey:@"City"];
-    
+    self.mainviewstate.text=[self.array objectForKey:@"State"];
     self.mainplacedescription.text=[self.array objectForKey:@"Description"];
     self.mainviewlatitude.text=[NSString stringWithFormat:@"%@",[self.array objectForKey:@"Lattitude"]];
     self.mainviewlongitude.text=[NSString stringWithFormat:@"%@",[self.array objectForKey:@"Longitude"]];

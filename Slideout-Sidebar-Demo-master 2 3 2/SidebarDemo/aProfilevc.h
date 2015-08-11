@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-@interface aProfilevc : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface aProfilevc : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *aProfilevcbarbtn;
 @property (weak, nonatomic) IBOutlet UIImageView *aUserprofilepic;
 @property (weak, nonatomic) IBOutlet UICollectionView *aCollectionviewoutlet;
