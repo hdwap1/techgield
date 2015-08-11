@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import "SWRevealViewController.h"
+#import "aProfilevc.h"
 @interface signup_vc : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *aSignupName;
 @property (weak, nonatomic) IBOutlet UITextField *aSignupEmail;

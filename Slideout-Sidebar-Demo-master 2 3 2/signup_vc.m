@@ -160,9 +160,13 @@
          {
              [user saveInBackground];
              NSLog(@"%@",user);
-               SWRevealViewController *swReveal=[self.storyboard instantiateViewControllerWithIdentifier:@"demo"];
-             [self presentViewController:swReveal animated:YES completion:nil];
-             
+              SWRevealViewController *swReveal=[self.storyboard instantiateViewControllerWithIdentifier:@"demo"];
+           [self presentViewController:swReveal animated:YES completion:nil];
+
+             //[self.navigationController pushViewController:profile animated:YES];
+             //[self presentViewController:profile animated:YES completion:nil];
+            
+
          }
      }];
       
