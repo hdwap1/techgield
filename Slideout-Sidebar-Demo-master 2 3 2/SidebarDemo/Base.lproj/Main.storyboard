@@ -134,25 +134,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmD-sx-3Hb">
-                                <rect key="frame" x="16" y="185" width="134" height="30"/>
+                                <rect key="frame" x="16" y="210" width="134" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <state key="normal" title="Follow">
+                                <state key="normal" title="My Trips">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="aProfilefollowaction:" destination="Kit-Yg-3jX" eventType="touchUpInside" id="Dyd-Cx-Gmi"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChY-De-r10">
-                                <rect key="frame" x="170" y="185" width="134" height="30"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <state key="normal" title="Contact">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="aProfilecontactaction:" destination="Kit-Yg-3jX" eventType="touchUpInside" id="fvT-WU-bRe"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="E89-dn-c1h">
@@ -188,6 +177,32 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BY3-z7-2EP">
+                                <rect key="frame" x="274" y="70" width="30" height="30"/>
+                                <state key="normal" title="Edit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lz-AG-7C4">
+                                <rect key="frame" x="16" y="168" width="122" height="30"/>
+                                <state key="normal" title="Upload profile pic">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="profileAct:" destination="Kit-Yg-3jX" eventType="touchUpInside" id="IzM-A3-6Vg"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChY-De-r10">
+                                <rect key="frame" x="170" y="210" width="134" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <state key="normal" title="Contact">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="aProfilecontactaction:" destination="Kit-Yg-3jX" eventType="touchUpInside" id="fvT-WU-bRe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -201,7 +216,9 @@
                         <outlet property="aProfileusercity" destination="iIC-uQ-7i9" id="0nJ-Lt-8rH"/>
                         <outlet property="aProfileusername" destination="2nf-IK-e9u" id="ShM-CK-Pvp"/>
                         <outlet property="aProfilevcbarbtn" destination="jk8-gb-enU" id="Pa2-Jj-99Z"/>
+                        <outlet property="aUploadPic" destination="0lz-AG-7C4" id="4hz-JN-I1u"/>
                         <outlet property="aUserprofilepic" destination="YA0-lu-zuY" id="1yB-nW-2Rs"/>
+                        <outlet property="editact" destination="BY3-z7-2EP" id="ZEd-l3-Ia4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cih-Oh-6Yi" userLabel="First Responder" sceneMemberID="firstResponder"/>
