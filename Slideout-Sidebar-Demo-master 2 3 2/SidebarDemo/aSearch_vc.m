@@ -21,9 +21,9 @@
     
     UIView *geopointView;
     NSMutableArray *Mutearr;
+    NSArray *Arraymaster;
     UISearchBar *sBar;
     BOOL isSearchEnabled;
-    
 
 }
 
@@ -39,6 +39,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
+    
+    
+    
     [Parse setApplicationId:@"aRdKtgCLpKk9PTOpPgZUHIUutAFDxxOs9vCPIz93" clientKey:@"tAGtNESX10C3fa2sboyMOwO1JMTV9RhMvdyhIjvY"];
     
     aPlaceData=[[NSArray alloc]init];
@@ -59,10 +62,20 @@
             self.aLoadActivity.hidden=YES;
         }}];
     
+    Arraymaster = [[NSArray alloc]init];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(City ==  %@)", @"Ahmedabad"];
+    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        PFObject *aObject =  evaluatedObject;
+        if([[aObject objectForKey:@"City"] isEqualToString:@"Ahemedabad"]){
+            return YES;
+        }else{
+            return NO;
+        }
+    }];
     
-    NSArray *filteredArray = [aPlaceData filteredArrayUsingPredicate:predicate];
+    
+    
+    Arraymaster = [aPlaceData filteredArrayUsingPredicate:predicate];
     
     
     
