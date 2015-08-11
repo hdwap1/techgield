@@ -13,11 +13,11 @@
 @interface PlaceInfo ()
 {
     CLGeocoder *geo;
-<<<<<<< HEAD
-=======
+
+
     CLLocationManager *aManager;
     
->>>>>>> 927b9fcd8ec3c43db788d71ce8ad1745c510be4f
+
 }
 
 @end
@@ -193,9 +193,9 @@
         
         annot.title = mark.name;
         annot.subtitle = mark.country;
-<<<<<<< HEAD
+
         [self.aPlacemap addAnnotation:annot];
-=======
+
         //        [self.aPlacemap addAnnotation:annot];
         //        [_aPlacemap setCenterCoordinate:coordinate animated:YES];
         
@@ -222,7 +222,7 @@
         
         
         
->>>>>>> 927b9fcd8ec3c43db788d71ce8ad1745c510be4f
+
     }];
     
 }
