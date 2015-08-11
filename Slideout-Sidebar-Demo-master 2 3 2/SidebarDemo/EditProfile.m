@@ -143,7 +143,7 @@
 
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return pickerDataedit[pickerrowedit];
+    return pickerDataedit[row];
 }
 
 @end

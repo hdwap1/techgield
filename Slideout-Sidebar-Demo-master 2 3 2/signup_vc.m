@@ -279,7 +279,7 @@
 
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return pickerData[pickerrow];
+    return pickerData[row];
 }
 
 
