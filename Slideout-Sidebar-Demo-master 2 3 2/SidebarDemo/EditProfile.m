@@ -8,7 +8,14 @@
 
 #import "EditProfile.h"
 
-@interface EditProfile ()
+@interface EditProfile (){
+
+    NSArray *pickerDataedit;
+    NSInteger pickerrowedit;
+    NSString *Pickerstredit;
+
+    
+}
 
 @end
 
@@ -16,6 +23,54 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    Pickerstredit = [[NSString alloc]init];
+    
+    
+    pickerDataedit = @[
+                   
+                   @"State/Union Territory",
+                   @"Andaman and Nicobar Islands",
+                   @"Andhra Pradesh",
+                   @"Arunachal Pradesh",
+                   @"Assam",
+                   @"Bihar",
+                   @"Chandigarh",
+                   @"Chhattisgarh",
+                   @"Dadra and Nagar Haveli",
+                   @"Daman and Diu",
+                   @"National Capital Territory of Delhi",
+                   @"Goa",
+                   @"Gujarat",
+                   @"Haryana",
+                   @"Himachal Pradesh",
+                   @"Jammu and Kashmir",
+                   @"Jharkhand",
+                   @"Karnataka",
+                   @"Kerala",
+                   @"Lakshadweep",
+                   @"Madhya Pradesh",
+                   @"Maharashtra",
+                   @"Manipur",
+                   @"Meghalaya",
+                   @"Mizoram",
+                   @"Nagaland",
+                   @"Odisha",
+                   @"Puducherry",
+                   @"Punjab",
+                   @"Rajasthan",
+                   @" Sikkim",
+                   @"Telangana",
+                   @"Tripura",
+                   @"Uttar Pradesh",
+                   @"Uttarakhand",
+                   @"West Bengal"
+                   ];
+    
+    self.Pickervieweditoutlet.dataSource = self;
+    self.Pickervieweditoutlet.delegate = self;
+
+    
     // Do any additional setup after loading the view.
     self.auSerEditName.enabled=NO;
     self.aUserEditCity.enabled=NO;
@@ -27,7 +82,7 @@
     self.auSerEditName.text=user.username;
     self.aUserEditEmail.text=user.email;
     self.aUserEditPassword.text=user.password;
-    self.aUserEditCity.text=user[@"City"];   
+    self.aUserEditCity.text=user[@"State"];   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,6 +110,9 @@
     
 }
 
+- (IBAction)editPassBtn:(UIButton *)sender {
+}
+
 - (IBAction)editNameBtn:(UIButton *)sender {
     self.auSerEditName.enabled=YES;
     
@@ -71,4 +129,21 @@
     self.aUserEditCity.enabled=YES;
  
 }
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return pickerDataedit.count;
+}
+
+
+- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return pickerDataedit[pickerrowedit];
+}
+
 @end

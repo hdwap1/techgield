@@ -12,7 +12,7 @@
 {
 
     NSArray *pickerData;
-    NSInteger row;
+    NSInteger pickerrow;
     NSString *Pickerstr;
 
 }
@@ -210,8 +210,8 @@
     user.email=_aSignupEmail.text;
     
         
-        row = [_aPickerviewoutlet selectedRowInComponent:0];
-        Pickerstr = [pickerData objectAtIndex:row];
+        pickerrow = [_aPickerviewoutlet selectedRowInComponent:0];
+        Pickerstr = [pickerData objectAtIndex:pickerrow];
         user[@"State"]=Pickerstr;
         
     user[@"Gender"]=[_aSignupGender titleForSegmentAtIndex:[_aSignupGender selectedSegmentIndex]];
@@ -279,7 +279,7 @@
 
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return pickerData[row];
+    return pickerData[pickerrow];
 }
 
 
@@ -288,7 +288,6 @@
 - (IBAction)addstateaction:(UIButton *)sender {
     
     _aPickerviewoutlet.hidden = FALSE;
-    
     
     
 }
