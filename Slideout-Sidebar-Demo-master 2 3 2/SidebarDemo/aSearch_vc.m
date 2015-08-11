@@ -338,8 +338,10 @@ else{
     NSLog(@"start");
 //    
 //    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+    NSString *str=[NSString stringWithFormat:@"%@",[sBar text]];
+    str=[str capitalizedString];
     
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(City =  %@)", @"Mumbai"];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(City =  %@)", str];
         
         aPlaceData = [allPlaces filteredArrayUsingPredicate:predicate];
 //        

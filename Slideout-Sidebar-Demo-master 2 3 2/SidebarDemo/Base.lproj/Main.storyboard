@@ -446,11 +446,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="     Logout" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mhC-FU-OUf">
-                                <rect key="frame" x="112" y="277" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6w-1C-fwA">
+                                <rect key="frame" x="93" y="195" width="134" height="30"/>
+                                <state key="normal" title="Click here to logout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="aLogoutAct:" destination="FED-NO-Pn2" eventType="touchUpInside" id="4wD-Wy-5G6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -792,7 +796,7 @@
         <!--A Launch vc-->
         <scene sceneID="Bln-Ib-t6w">
             <objects>
-                <viewController id="8G4-ZK-CvC" customClass="aLaunch_vc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="launchvc" id="8G4-ZK-CvC" customClass="aLaunch_vc" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xVu-z7-0Gw"/>
                         <viewControllerLayoutGuide type="bottom" id="3Ak-oY-uC5"/>
