@@ -20,7 +20,13 @@
     [super viewDidLoad];
     
     self.navigationController.navigationBar.hidden=TRUE;
+    if([PFUser currentUser])
+    {
+        SWRevealViewController *swReveal=[self.storyboard instantiateViewControllerWithIdentifier:@"demo"];
+        [self presentViewController:swReveal animated:YES completion:nil];
+    }
     
+
     
     
 //    self.navigationController.navigationBar.hidden=FALSE;
@@ -37,7 +43,7 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
+   }
 
 -(void)viewWillAppear:(BOOL)animated {
 
@@ -64,5 +70,19 @@ self.navigationController.navigationBar.hidden=TRUE;
     
     appDelegate.userstate = TRUE;
     
+}
+
+- (IBAction)aLoginAct:(UIButton *)sender {
+    AppDelegate *appDelegate = (AppDelegate*) [UIApplication sharedApplication].delegate;
+    
+    appDelegate.userstate = FALSE;
+
+}
+
+- (IBAction)aNewAccountAct:(UIButton *)sender {
+    AppDelegate *appDelegate = (AppDelegate*) [UIApplication sharedApplication].delegate;
+    
+    appDelegate.userstate = FALSE;
+
 }
 @end
