@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "aPlaceListCell.h"
 #import "aScrollCell.h"
+#import <Parse/Parse.h>
 @interface aSearch_vc : UIViewController <UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate>
 {
     NSArray *aPlaceData;
-    
+    PFObject *aobject;
+    NSArray *allPlaces;
 }
 //-(void)centerScrollViewContents;
 //-(void)scrollViewDoubleTapped:(UITapGestureRecognizer*)recognizer;
