@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <Parse/Parse.h>
 @interface aProfilevc : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *aProfilevcbarbtn;
 @property (weak, nonatomic) IBOutlet UIImageView *aUserprofilepic;
@@ -21,5 +21,8 @@
 - (IBAction)aProfilefollowaction:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *aProfilecontact;
 - (IBAction)aProfilecontactaction:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *editact;
+@property (weak, nonatomic) IBOutlet UIButton *aUploadPic;
+- (IBAction)profileAct:(UIButton *)sender;
 
 @end
