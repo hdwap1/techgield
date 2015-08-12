@@ -816,6 +816,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="aNewAccountAct:" destination="8G4-ZK-CvC" eventType="touchUpInside" id="V19-Dm-a5Q"/>
                                     <segue destination="Qtu-Oo-iTt" kind="push" id="cCf-2W-onF"/>
                                 </connections>
                             </button>
@@ -828,6 +829,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="aLoginAct:" destination="8G4-ZK-CvC" eventType="touchUpInside" id="hLa-8O-af7"/>
                                     <segue destination="2Sh-Px-e2z" kind="push" id="UKT-iT-mxi"/>
                                 </connections>
                             </button>
