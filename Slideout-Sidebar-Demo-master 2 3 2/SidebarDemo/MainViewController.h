@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import "aLaunch_vc.h"
+#import "Nearmevc.h"
 
 @interface MainViewController : UIViewController <UISearchBarDelegate,UIAlertViewDelegate>
 

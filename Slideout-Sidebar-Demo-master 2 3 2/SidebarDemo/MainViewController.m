@@ -150,6 +150,12 @@
         
         [alrt show];
     }
+    else
+    {
+        UIStoryboard *aStory=[UIStoryboard storyboardWithName:@"Main2" bundle:nil];
+        Nearmevc *near=[aStory instantiateViewControllerWithIdentifier:@"nearmevc"];
+        [self.navigationController pushViewController:near animated:YES];
+    }
     
 }
 
