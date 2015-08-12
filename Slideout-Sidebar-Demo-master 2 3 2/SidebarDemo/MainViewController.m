@@ -132,9 +132,25 @@
 
 
 - (IBAction)aAddtrip:(UIButton *)sender {
+    AppDelegate *appDelegate = (AppDelegate*) [UIApplication sharedApplication].delegate;
+    if(appDelegate.userstate==TRUE)
+    {
+        UIAlertView *alrt = [[UIAlertView alloc] initWithTitle:@"Login/Register Required" message:@"Please login/Register to use thi feature" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles: @"Login/Register",nil];
+        
+        [alrt show];
+    }
+
 }
 
 - (IBAction)aNearme:(UIButton *)sender {
+      AppDelegate *appDelegate = (AppDelegate*) [UIApplication sharedApplication].delegate;
+    if(appDelegate.userstate==TRUE)
+    {
+        UIAlertView *alrt = [[UIAlertView alloc] initWithTitle:@"Login/Register Required" message:@"Please login/Register to use thi feature" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles: @"Login/Register",nil];
+        
+        [alrt show];
+    }
+    
 }
 
 - (IBAction)aSearchtrip:(UIButton *)sender {
@@ -145,6 +161,14 @@
 
     
     
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex==1)
+    {
+        aLaunch_vc *aHome=[self.storyboard instantiateViewControllerWithIdentifier:@"launchvc"];
+        [self.navigationController pushViewController:aHome animated:YES];
+    }
 }
 
 
