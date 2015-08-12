@@ -7,6 +7,7 @@
 //
 
 #import "signup_vc.h"
+#import "AppDelegate.h"
 
 @interface signup_vc ()
 {
@@ -232,6 +233,9 @@
      }];
       
         
+//        AppDelegate *appDelegate = (AppDelegate*) [UIApplication sharedApplication].delegate;
+//        
+//        appDelegate.userstate = TRUE;
         
 
 }
