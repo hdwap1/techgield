@@ -27,7 +27,7 @@
     self.auSerEditName.text=user.username;
     self.aUserEditEmail.text=user.email;
     self.aUserEditPassword.text=user.password;
-    self.aUserEditCity.text=user[@"City"];
+    self.aUserEditCity.text=user[@"City"];   
 }
 
 - (void)didReceiveMemoryWarning {
