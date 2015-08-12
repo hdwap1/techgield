@@ -502,6 +502,7 @@
                     <navigationItem key="navigationItem" id="LEj-P5-LMK"/>
                     <connections>
                         <outlet property="aNearMeTable" destination="pAF-V0-aHM" id="dlQ-Ri-p8N"/>
+                        <outlet property="aPlaceMap" destination="kVw-Al-WeX" id="Ad2-ca-F0p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jyn-3o-cXQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

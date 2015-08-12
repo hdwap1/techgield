@@ -9,6 +9,16 @@
 #import "Nearmevc.h"
 
 @interface Nearmevc ()
+{
+    CLGeocoder *geo;
+    
+    
+    CLLocationManager *aManager;
+    
+    NSArray *latArry;
+    NSArray *longArry;
+
+}
 
 @end
 
@@ -31,6 +41,9 @@
             aNearMePlacesArry=[[NSArray alloc]initWithArray:objects];
              NSLog(@"%@",aNearMePlacesArry);
             [self.aNearMeTable reloadData];
+            
+            
+            
         }
         else{
             NSLog(@"error");
@@ -56,15 +69,58 @@
 */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if(aNearMePlacesArry.count>0)
+    {
     return aNearMePlacesArry.count;
+    }
+    return 0;
     
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    
     NearMeTable *cell=[tableView dequeueReusableCellWithIdentifier:@"nearme"];
     cell.aNearMePlaceName.text=[[aNearMePlacesArry objectAtIndex:indexPath.row]objectForKey:@"Name"];
     cell.aNearMePlaceCity.text=[[aNearMePlacesArry objectAtIndex:indexPath.row]objectForKey:@"City"];
     
+    
+    self.strLat=[[aNearMePlacesArry objectAtIndex:indexPath.row]objectForKey:@"Lattitude"];
+    self.strLong=[[aNearMePlacesArry objectAtIndex:indexPath.row]objectForKey:@"Longitude"];
+    
+     CLLocation *locate = [[CLLocation alloc]
+                          initWithLatitude:[self.strLat doubleValue] longitude: [self.strLong doubleValue]];
+    
+    [geo reverseGeocodeLocation:locate completionHandler:^(NSArray *placemarks, NSError *error) {
+        CLLocationCoordinate2D coordinate=locate.coordinate;
+        MKPointAnnotation *annot = [[MKPointAnnotation alloc] init];
+        annot.coordinate=coordinate;
+        CLPlacemark *mark=[placemarks objectAtIndex:0];
+        
+        annot.title = mark.name;
+        annot.subtitle = mark.country;
+        
+        [self.aPlaceMap addAnnotation:annot];
+        
+        [self.aPlaceMap addAnnotation:annot];
+        [_aPlaceMap setCenterCoordinate:coordinate animated:YES];
+        
+        
+        [self.aPlaceMap addAnnotation:annot];
+        // [self.SecondMapview addAnnotation:annot];
+        
+        //[_SecondMapview setCenterCoordinate:coordinate animated:YES];
+        
+        
+        // mapview controller
+        
+        
+        
+        
+        //         map view as a sub view
+        
+        [_aPlaceMap setCenterCoordinate:coordinate animated:YES];
+    }];
     return cell;
     
 }

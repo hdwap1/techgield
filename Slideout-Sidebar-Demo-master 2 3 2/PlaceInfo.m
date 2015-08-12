@@ -205,7 +205,7 @@
                [_aPlacemap setCenterCoordinate:coordinate animated:YES];
         
         
-        [self.aMapviewoutlet addAnnotation:annot];
+        [self.aPlacemap addAnnotation:annot];
        // [self.SecondMapview addAnnotation:annot];
         
         //[_SecondMapview setCenterCoordinate:coordinate animated:YES];
@@ -218,7 +218,7 @@
         
 //         map view as a sub view
         
-        [_aMapviewoutlet setCenterCoordinate:coordinate animated:YES];
+        [_aPlacemap setCenterCoordinate:coordinate animated:YES];
        // [_aMapUIview addSubview:_aMapviewoutlet];
        // [self.view addSubview:_aMapUIview];
         
