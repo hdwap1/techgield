@@ -102,11 +102,27 @@
 
 - (IBAction)aSaveProfile:(UIButton *)sender {
     PFUser *user=[PFUser currentUser];
-     [user setObject:self.aUserstate.text forKey:@"State"];
-
+    
+    
+    
+    if([_auSerEditName.text length]>5)
+    {
+        
+        PFUser *user=[PFUser user];
+        pickerrowedit = [_Pickervieweditoutlet selectedRowInComponent:0];
+        Pickerstredit = [pickerDataedit objectAtIndex:pickerrowedit];
+        
+        user[@"State"]=Pickerstredit;
+        self.aUserstate.text=Pickerstredit;
+        
+    }
+    
+    [user setObject:self.aUserstate.text forKey:@"State"];
+    
     [user setEmail:self.aUserEditEmail.text];
     [user setUsername:self.auSerEditName.text];
-    
+
+
     [user saveInBackground];
     
 }
@@ -130,20 +146,7 @@
 - (IBAction)editStateBtn:(UIButton *)sender {
     
     self.aUserstate.enabled = YES;
-    
-    _Pickervieweditoutlet.hidden = NO;
-    
-    
-    if([_auSerEditName.text length]>5)
-    {
-        
-        PFUser *user=[PFUser user];
-        pickerrowedit = [_Pickervieweditoutlet selectedRowInComponent:0];
-        Pickerstredit = [pickerDataedit objectAtIndex:pickerrowedit];
-        user[@"State"]=Pickerstredit;
-        
-        
-    }
+    _Pickervieweditoutlet.hidden=NO;
     
     
 }
