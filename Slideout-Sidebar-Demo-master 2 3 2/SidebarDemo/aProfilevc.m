@@ -21,8 +21,10 @@
     // Do any additional setup after loading the view.
     [Parse setApplicationId:@"aRdKtgCLpKk9PTOpPgZUHIUutAFDxxOs9vCPIz93" clientKey:@"tAGtNESX10C3fa2sboyMOwO1JMTV9RhMvdyhIjvY"];
     PFUser *user=[PFUser currentUser];
+    
+    
     self.aProfileusername.text=user.username;
-    self.aProfileusercity.text=user[@"City"];
+    self.aProfileuserstate.text=user[@"State"];
     PFFile *fileRetrive=[user objectForKey:@"profile_pic"];
     
     [fileRetrive getDataInBackgroundWithBlock:
@@ -48,7 +50,19 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
 
+  PFUser *user=[PFUser currentUser];
+    self.aProfileusername.text=user.username;
+    self.aProfileuserstate.text=user[@"State"];
+    PFFile *fileRetrive=[user objectForKey:@"profile_pic"];
+    
+    [fileRetrive getDataInBackgroundWithBlock:
+     ^(NSData *aDt, NSError *error){
+         }];
+    
+    
+}
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -130,9 +144,7 @@
     [userimage saveInBackground];
    // [file saveInBackground];
     // userimage[@"profile_pic"]=file;
-    
-    
-    PFFile *fileRetrive=[userimage objectForKey:@"profile_pic"];
+
     
     [file getDataInBackgroundWithBlock:
      ^(NSData *aDt, NSError *error){

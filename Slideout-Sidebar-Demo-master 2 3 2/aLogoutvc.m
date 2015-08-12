@@ -50,7 +50,7 @@
     {
     [PFUser logOut];
     aLaunch_vc *aHome=[self.storyboard instantiateViewControllerWithIdentifier:@"launchvc"];
-    [self.navigationController pushViewController:aHome animated:YES];
+    //[self presentViewController:aHome animated:YES completion:nil];
     }
     
 }

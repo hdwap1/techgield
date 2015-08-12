@@ -15,7 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *aProfilecollectionview;
 
-@property (weak, nonatomic) IBOutlet UILabel *aProfileusercity;
+@property (weak, nonatomic) IBOutlet UILabel *aProfileuserstate;
 @property (weak, nonatomic) IBOutlet UILabel *aProfileusername;
 @property (weak, nonatomic) IBOutlet UIButton *aProfilefollow;
 - (IBAction)aProfilefollowaction:(UIButton *)sender;

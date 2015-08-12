@@ -101,29 +101,36 @@
 */
 
 - (IBAction)aSaveProfile:(UIButton *)sender {
-    PFUser *user=[PFUser currentUser];
+    
     
     
     
     if([_auSerEditName.text length]>5)
     {
-        
-        PFUser *user=[PFUser user];
+        PFUser *user=[PFUser currentUser];
+//        PFUser *user=[PFUser user];
         pickerrowedit = [_Pickervieweditoutlet selectedRowInComponent:0];
         Pickerstredit = [pickerDataedit objectAtIndex:pickerrowedit];
         
         user[@"State"]=Pickerstredit;
         self.aUserstate.text=Pickerstredit;
+        [user setObject:self.aUserstate.text forKey:@"State"];
         
+        [user setEmail:self.aUserEditEmail.text];
+        [user setUsername:self.auSerEditName.text];
+        
+        
+        [user saveInBackground];
     }
     
-    [user setObject:self.aUserstate.text forKey:@"State"];
+    else{
     
-    [user setEmail:self.aUserEditEmail.text];
-    [user setUsername:self.auSerEditName.text];
-
-
-    [user saveInBackground];
+    
+        UIAlertView *usernamealert = [[UIAlertView alloc] initWithTitle:@"Opps !" message:@"Please Check your username.Username should be greater than 5 characters." delegate:self cancelButtonTitle:@"cancel" otherButtonTitles: nil];
+        [usernamealert show];
+    }
+    
+    
     
 }
 
