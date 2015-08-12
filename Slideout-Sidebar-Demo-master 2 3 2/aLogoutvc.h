@@ -11,4 +11,5 @@
 @interface aLogoutvc : UIViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *aLogoutbarbtn;
 
+
 @end
