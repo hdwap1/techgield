@@ -28,8 +28,6 @@
 
 
 - (IBAction)loginAct:(UIButton *)sender;
-//- (IBAction)aLogSignAct:(UIButton *)sender;
-//- (IBAction)skipAct:(UIButton *)sender;
 
 
 

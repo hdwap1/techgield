@@ -45,6 +45,9 @@
 		9EF8871C1B63AB27000EB283 /* aMessagevc.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF8871B1B63AB27000EB283 /* aMessagevc.m */; };
 		9EF8871F1B63AB4F000EB283 /* aLogoutvc.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF8871E1B63AB4F000EB283 /* aLogoutvc.m */; };
 		A92306851B7584E2001B8077 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92306841B7584E2001B8077 /* MapKit.framework */; };
+		A944462A1B7B3F1000D7F587 /* EditProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = A94446291B7B3F1000D7F587 /* EditProfile.m */; };
+		A94446301B7B6BC700D7F587 /* resetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = A944462F1B7B6BC700D7F587 /* resetPassword.m */; };
+		A94B04221B796DFB002432A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A94B04201B796DFB002432A3 /* Main.storyboard */; };
 		A95E56CA1B72E90100506FEC /* PlaceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A95E56C91B72E90100506FEC /* PlaceInfo.m */; };
 		A96601971B72116C0056ADD9 /* aPlaceListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A96601961B72116C0056ADD9 /* aPlaceListCell.m */; };
 		A975DF681B762D2F004331DA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A975DF671B762D2F004331DA /* CoreLocation.framework */; };
@@ -80,7 +83,6 @@
 		F4090B941A0F67D000651F6F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4090B931A0F67D000651F6F /* main.m */; };
 		F4090B971A0F67D000651F6F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4090B961A0F67D000651F6F /* AppDelegate.m */; };
 		F4090B9A1A0F67D000651F6F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4090B991A0F67D000651F6F /* ViewController.m */; };
-		F4090B9D1A0F67D000651F6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4090B9B1A0F67D000651F6F /* Main.storyboard */; };
 		F4090B9F1A0F67D000651F6F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4090B9E1A0F67D000651F6F /* Images.xcassets */; };
 		F4090BA21A0F67D000651F6F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4090BA01A0F67D000651F6F /* LaunchScreen.xib */; };
 		F4090BAE1A0F67D000651F6F /* SidebarDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4090BAD1A0F67D000651F6F /* SidebarDemoTests.m */; };
@@ -152,6 +154,11 @@
 		9EF8871D1B63AB4F000EB283 /* aLogoutvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aLogoutvc.h; sourceTree = "<group>"; };
 		9EF8871E1B63AB4F000EB283 /* aLogoutvc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aLogoutvc.m; sourceTree = "<group>"; };
 		A92306841B7584E2001B8077 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A94446281B7B3F1000D7F587 /* EditProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfile.h; sourceTree = "<group>"; };
+		A94446291B7B3F1000D7F587 /* EditProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfile.m; sourceTree = "<group>"; };
+		A944462E1B7B6BC700D7F587 /* resetPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resetPassword.h; sourceTree = "<group>"; };
+		A944462F1B7B6BC700D7F587 /* resetPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resetPassword.m; sourceTree = "<group>"; };
+		A94B04211B796DFB002432A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SidebarDemo/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A95E56C81B72E90100506FEC /* PlaceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceInfo.h; sourceTree = "<group>"; };
 		A95E56C91B72E90100506FEC /* PlaceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceInfo.m; sourceTree = "<group>"; };
 		A96601951B72116C0056ADD9 /* aPlaceListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aPlaceListCell.h; sourceTree = "<group>"; };
@@ -212,7 +219,6 @@
 		F4090B961A0F67D000651F6F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F4090B981A0F67D000651F6F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F4090B991A0F67D000651F6F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F4090B9C1A0F67D000651F6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4090B9E1A0F67D000651F6F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F4090BA11A0F67D000651F6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F4090BA71A0F67D000651F6F /* SidebarDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SidebarDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -394,6 +400,24 @@
 			name = SignUp;
 			sourceTree = "<group>";
 		};
+		A94446271B7B3EF500D7F587 /* Edit Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A94446281B7B3F1000D7F587 /* EditProfile.h */,
+				A94446291B7B3F1000D7F587 /* EditProfile.m */,
+			);
+			name = "Edit Profile";
+			sourceTree = "<group>";
+		};
+		A944462D1B7B6AD000D7F587 /* Password reset */ = {
+			isa = PBXGroup;
+			children = (
+				A944462E1B7B6BC700D7F587 /* resetPassword.h */,
+				A944462F1B7B6BC700D7F587 /* resetPassword.m */,
+			);
+			name = "Password reset";
+			sourceTree = "<group>";
+		};
 		A95E56C71B72DB8200506FEC /* aSearchmodule */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,7 +530,7 @@
 				A96601941B7211280056ADD9 /* aCollectionViewCell */,
 				A96601931B7210470056ADD9 /* FrameWorks */,
 				A97B9A711B701AF70018A6E2 /* Main2.storyboard */,
-				F4090B9B1A0F67D000651F6F /* Main.storyboard */,
+				A94B04201B796DFB002432A3 /* Main.storyboard */,
 				F4090B901A0F67D000651F6F /* SidebarDemo */,
 				F4090BAA1A0F67D000651F6F /* SidebarDemoTests */,
 				F4090B8F1A0F67D000651F6F /* Products */,
@@ -527,6 +551,8 @@
 		F4090B901A0F67D000651F6F /* SidebarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A944462D1B7B6AD000D7F587 /* Password reset */,
+				A94446271B7B3EF500D7F587 /* Edit Profile */,
 				F4090BC71A0FD74700651F6F /* SWRevealViewController */,
 				F4090B951A0F67D000651F6F /* AppDelegate.h */,
 				F4090B961A0F67D000651F6F /* AppDelegate.m */,
@@ -671,7 +697,6 @@
 				9EB6EB0A1B63D526005F6D32 /* test14.jpg in Resources */,
 				9EF887141B63A1C2000EB283 /* Logout.png in Resources */,
 				9EB6EB001B63D526005F6D32 /* test3.jpg in Resources */,
-				F4090B9D1A0F67D000651F6F /* Main.storyboard in Resources */,
 				9EF887111B63A1C2000EB283 /* chat icon.png in Resources */,
 				9EB6EB011B63D526005F6D32 /* test5.jpg in Resources */,
 				9EB6EB061B63D526005F6D32 /* test10.jpg in Resources */,
@@ -688,6 +713,7 @@
 				A97B9A7A1B7050BF0018A6E2 /* asearch.png in Resources */,
 				9EB6EB151B63D647005F6D32 /* button3.png in Resources */,
 				F4090B9F1A0F67D000651F6F /* Images.xcassets in Resources */,
+				A94B04221B796DFB002432A3 /* Main.storyboard in Resources */,
 				9EF887151B63A1C2000EB283 /* Profile.png in Resources */,
 				9EB6EAFE1B63D526005F6D32 /* test1.jpg in Resources */,
 				A97B9A721B701AF70018A6E2 /* Main2.storyboard in Resources */,
@@ -731,6 +757,7 @@
 				F4090B971A0F67D000651F6F /* AppDelegate.m in Sources */,
 				F4090BCA1A0FD76C00651F6F /* SWRevealViewController.m in Sources */,
 				9EB6EAEB1B63D4CE005F6D32 /* launch_vc.m in Sources */,
+				A944462A1B7B3F1000D7F587 /* EditProfile.m in Sources */,
 				9EF8871F1B63AB4F000EB283 /* aLogoutvc.m in Sources */,
 				A9AFDBCA1B72297E0002D2E9 /* SDWebImageDownloaderOperation.m in Sources */,
 				9EB6EAEA1B63D4CE005F6D32 /* home_vc.m in Sources */,
@@ -744,6 +771,7 @@
 				A96601971B72116C0056ADD9 /* aPlaceListCell.m in Sources */,
 				9EC4B59E1B6381900023BF73 /* newtestclass.m in Sources */,
 				9E4CF5D81B77555C00CA0253 /* aMapview_VC.m in Sources */,
+				A94446301B7B6BC700D7F587 /* resetPassword.m in Sources */,
 				F4090BC61A0FD6F800651F6F /* SidebarTableViewController.m in Sources */,
 				A97B9A761B701BD90018A6E2 /* aSearch_vc.m in Sources */,
 				A9AFDBD31B72297E0002D2E9 /* UIView+WebCacheOperation.m in Sources */,
@@ -771,13 +799,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F4090B9B1A0F67D000651F6F /* Main.storyboard */ = {
+		A94B04201B796DFB002432A3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F4090B9C1A0F67D000651F6F /* Base */,
+				A94B04211B796DFB002432A3 /* Base */,
 			);
 			name = Main.storyboard;
-			path = SidebarDemo;
 			sourceTree = "<group>";
 		};
 		F4090BA01A0F67D000651F6F /* LaunchScreen.xib */ = {

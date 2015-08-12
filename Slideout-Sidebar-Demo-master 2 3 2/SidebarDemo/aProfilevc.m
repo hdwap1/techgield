@@ -19,7 +19,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [Parse setApplicationId:@"aRdKtgCLpKk9PTOpPgZUHIUutAFDxxOs9vCPIz93" clientKey:@"tAGtNESX10C3fa2sboyMOwO1JMTV9RhMvdyhIjvY"];
+    PFUser *user=[PFUser currentUser];
     
+    
+    self.aProfileusername.text=user.username;
+    self.aProfileuserstate.text=user[@"State"];
+    PFFile *fileRetrive=[user objectForKey:@"profile_pic"];
+    
+    [fileRetrive getDataInBackgroundWithBlock:
+     ^(NSData *aDt, NSError *error){
+         
+         self.aUserprofilepic.image=[UIImage imageWithData:aDt];
+     }];
+        
+   
+
+    NSLog(@"%@",user[@"City"]);
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
@@ -27,11 +43,26 @@
         [self.aProfilevcbarbtn setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
-    
+    if(user)
+    {
+        _editact.hidden=false;
+    }
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
 
+  PFUser *user=[PFUser currentUser];
+    self.aProfileusername.text=user.username;
+    self.aProfileuserstate.text=user[@"State"];
+    PFFile *fileRetrive=[user objectForKey:@"profile_pic"];
+    
+    [fileRetrive getDataInBackgroundWithBlock:
+     ^(NSData *aDt, NSError *error){
+         }];
+    
+    
+}
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -89,4 +120,43 @@
     
     
 }
+- (IBAction)profileAct:(UIButton *)sender {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:picker animated:YES completion:NULL];
+
+}
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+
+    
+    NSData *imageData = UIImagePNGRepresentation(chosenImage);
+
+    PFUser *userimage=[PFUser currentUser];
+    PFFile *file = [PFFile fileWithName:@"profile.png" data:imageData];
+    [userimage removeObjectForKey:@"profile_pic"];
+    [userimage setObject:file forKey:@"profile_pic"];
+    [file saveInBackground];
+    
+    [userimage saveInBackground];
+   // [file saveInBackground];
+    // userimage[@"profile_pic"]=file;
+
+    
+    [file getDataInBackgroundWithBlock:
+     ^(NSData *aDt, NSError *error){
+         
+         self.aUserprofilepic.image=[UIImage imageWithData:aDt];
+     }];
+    self.aUserprofilepic.image = chosenImage;
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+    
+    
+    
+}
+
 @end

@@ -8,6 +8,7 @@
 
 #import "login_vc.h"
 #import <QuartzCore/QuartzCore.h>
+#import "AppDelegate.h"
 
 @interface login_vc ()<UITextFieldDelegate>
 
@@ -178,12 +179,13 @@
 
                                         }
                                     }];
-     
+    
+    
+//    AppDelegate *appDelegate = (AppDelegate*) [UIApplication sharedApplication].delegate;
+//    
+//    appDelegate.userstate = TRUE;
+    
 }
 
-- (IBAction)aLogSignAct:(UIButton *)sender {
-}
 
-- (IBAction)skipAct:(UIButton *)sender {
-}
 @end

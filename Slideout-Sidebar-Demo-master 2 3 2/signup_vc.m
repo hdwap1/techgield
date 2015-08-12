@@ -7,8 +7,16 @@
 //
 
 #import "signup_vc.h"
+#import "AppDelegate.h"
 
 @interface signup_vc ()
+{
+
+    NSArray *pickerData;
+    NSInteger pickerrow;
+    NSString *Pickerstr;
+
+}
 
 @end
 
@@ -17,12 +25,57 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+  
+    Pickerstr = [[NSString alloc]init];
+    
+    
+    pickerData = @[
+    
+    @"State/Union Territory",
+    @"Andaman and Nicobar Islands",
+    @"Andhra Pradesh",
+    @"Arunachal Pradesh",
+    @"Assam",
+    @"Bihar",
+    @"Chandigarh",
+    @"Chhattisgarh",
+    @"Dadra and Nagar Haveli",
+    @"Daman and Diu",
+    @"National Capital Territory of Delhi",
+    @"Goa",
+    @"Gujarat",
+    @"Haryana",
+    @"Himachal Pradesh",
+    @"Jammu and Kashmir",
+    @"Jharkhand",
+    @"Karnataka",
+    @"Kerala",
+    @"Lakshadweep",
+    @"Madhya Pradesh",
+    @"Maharashtra",
+    @"Manipur",
+    @"Meghalaya",
+    @"Mizoram",
+    @"Nagaland",
+    @"Odisha",
+    @"Puducherry",
+    @"Punjab",
+    @"Rajasthan",
+    @" Sikkim",
+    @"Telangana",
+    @"Tripura",
+    @"Uttar Pradesh",
+    @"Uttarakhand",
+    @"West Bengal"
+    ];
+    
+    self.aPickerviewoutlet.dataSource = self;
+    self.aPickerviewoutlet.delegate = self;
+    
     [Parse setApplicationId:@"aRdKtgCLpKk9PTOpPgZUHIUutAFDxxOs9vCPIz93" clientKey:@"tAGtNESX10C3fa2sboyMOwO1JMTV9RhMvdyhIjvY"];
    
     _aSignuBbtn.layer.cornerRadius=10;
     
-    _aProfileImage.hidden=YES;
-    _aProfilePicLabel.hidden=YES;
     
     [_aProfileOptionSelection addTarget:self
                                  action:@selector(segmentAction)
@@ -86,11 +139,15 @@
     
     
     //UITextField *aCity = [[UITextField alloc] initWithFrame:CGRectMake(16, 280, 288,40)];
+
+    
+    //_aSignupCity.frame = CGRectMake(16, 280, 288, 60);
+    
     self.aSignupCity.textColor = [UIColor colorWithRed:0/256.0 green:84/256.0 blue:129/256.0 alpha:1.0];
     self.aSignupCity.layer.cornerRadius=7;
     self.aSignupCity.font = [UIFont fontWithName:@"Avenir Book" size:15];
     self.aSignupCity.backgroundColor=[UIColor whiteColor];
-    self.aSignupCity.placeholder=@" Enter City";
+    self.aSignupCity.placeholder=@" Enter State";
     
     
     
@@ -152,7 +209,12 @@
     user.username=_aSignupName.text;
     user.password=_aSignupPassword.text;
     user.email=_aSignupEmail.text;
-    user[@"City"]=_aSignupCity.text;
+    
+        
+        pickerrow = [_aPickerviewoutlet selectedRowInComponent:0];
+        Pickerstr = [pickerData objectAtIndex:pickerrow];
+        user[@"State"]=Pickerstr;
+        
     user[@"Gender"]=[_aSignupGender titleForSegmentAtIndex:[_aSignupGender selectedSegmentIndex]];
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
      {
@@ -160,13 +222,20 @@
          {
              [user saveInBackground];
              NSLog(@"%@",user);
-               SWRevealViewController *swReveal=[self.storyboard instantiateViewControllerWithIdentifier:@"demo"];
-             [self presentViewController:swReveal animated:YES completion:nil];
-             
+              SWRevealViewController *swReveal=[self.storyboard instantiateViewControllerWithIdentifier:@"demo"];
+           [self presentViewController:swReveal animated:YES completion:nil];
+
+             //[self.navigationController pushViewController:profile animated:YES];
+             //[self presentViewController:profile animated:YES completion:nil];
+            
+
          }
      }];
       
         
+//        AppDelegate *appDelegate = (AppDelegate*) [UIApplication sharedApplication].delegate;
+//        
+//        appDelegate.userstate = TRUE;
         
 
 }
@@ -197,5 +266,33 @@
     {
         NSLog(@"second");
     }
+}
+
+
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return pickerData.count;
+}
+
+
+- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return pickerData[row];
+}
+
+
+
+
+- (IBAction)addstateaction:(UIButton *)sender {
+    
+    _aPickerviewoutlet.hidden = FALSE;
+    
+    
 }
 @end

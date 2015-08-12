@@ -44,4 +44,14 @@
 }
 */
 
+- (IBAction)aLogoutAct:(UIButton *)sender {
+    //PFUser *user=[PFUser currentUser];
+    if([PFUser user])
+    {
+    [PFUser logOut];
+    aLaunch_vc *aHome=[self.storyboard instantiateViewControllerWithIdentifier:@"launchvc"];
+    //[self presentViewController:aHome animated:YES completion:nil];
+    }
+    
+}
 @end

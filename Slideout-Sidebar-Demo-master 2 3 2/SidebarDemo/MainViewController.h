@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+#import "aLaunch_vc.h"
 
-@interface MainViewController : UIViewController <UISearchBarDelegate>
+@interface MainViewController : UIViewController <UISearchBarDelegate,UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *aSearchtrip;
 @property (weak, nonatomic) IBOutlet UIButton *aNearme;

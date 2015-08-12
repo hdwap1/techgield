@@ -9,6 +9,7 @@
 #import "SidebarTableViewController.h"
 #import "SWRevealViewController.h"
 #import "PhotoViewController.h"
+#import "AppDelegate.h"
 
 @interface SidebarTableViewController ()
 
@@ -21,7 +22,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    menuItems = @[@"title", @"Home",@"Profile",@"Messages",@"Logout"];
+    AppDelegate *appDelegate = (AppDelegate*) [UIApplication sharedApplication].delegate;
+    
+    if (appDelegate.userstate == FALSE){
+    
+        menuItems = @[@"title", @"Home",@"Profile",@"Messages",@"Logout"];
+    }
+    else
+    {
+        menuItems = @[@"title", @"Home", @"Loginsignup"];
+    
+    }
+
+    
+   // menuItems = @[@"title", @"Home",@"Profile",@"Messages",@"Logout"];
 }
 
 - (void)didReceiveMemoryWarning {

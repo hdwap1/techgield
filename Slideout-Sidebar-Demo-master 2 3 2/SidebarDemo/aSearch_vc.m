@@ -21,9 +21,9 @@
     
     UIView *geopointView;
     NSMutableArray *Mutearr;
+    NSArray *Arraymaster;
     UISearchBar *sBar;
     BOOL isSearchEnabled;
-    
 
 }
 
@@ -38,9 +38,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
-    [Parse setApplicationId:@"aRdKtgCLpKk9PTOpPgZUHIUutAFDxxOs9vCPIz93" clientKey:@"tAGtNESX10C3fa2sboyMOwO1JMTV9RhMvdyhIjvY"];
+
     
+    [Parse setApplicationId:@"aRdKtgCLpKk9PTOpPgZUHIUutAFDxxOs9vCPIz93" clientKey:@"tAGtNESX10C3fa2sboyMOwO1JMTV9RhMvdyhIjvY"];
+    allPlaces=[[NSArray alloc]init];
     aPlaceData=[[NSArray alloc]init];
     
     PFQuery *aQuery=[[PFQuery alloc]initWithClassName:@"Place_Default"];
@@ -51,24 +52,37 @@
     
     [aQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            aPlaceData=[NSArray arrayWithArray:objects] ;
+            allPlaces=[NSArray arrayWithArray:objects] ;
+            aPlaceData=[NSArray arrayWithArray:allPlaces];
             NSLog(@"%@",aPlaceData);
+            
+            aobject=[[PFObject alloc]initWithClassName:@"Place_Default"];
+            aobject=objects;
             
             [_AcollectionView reloadData];
             [_Acollectionviewslider reloadData];
             self.aLoadActivity.hidden=YES;
         }}];
     
+    Arraymaster = [[NSArray alloc]init];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(City ==  %@)", @"Ahmedabad"];
-    
-    NSArray *filteredArray = [aPlaceData filteredArrayUsingPredicate:predicate];
+//    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+//        PFObject *aObject =  evaluatedObject;
+//        if([[aObject objectForKey:@"City"] isEqualToString:@"Ahemedabad"]){
+//            return YES;
+//        }else{
+//            return NO;
+//        }
+//    }];
+//    
+//    Arraymaster = [aPlaceData filteredArrayUsingPredicate:predicate];
     
     
     
     self.navigationItem.hidesBackButton=YES;
     
     sBar =[[UISearchBar alloc]initWithFrame: CGRectMake(45, 10, self.navigationController.navigationBar.bounds.size.width/1.5, self.navigationController.navigationBar.bounds.size.height/2)];
+    sBar.delegate=self;
     
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
@@ -92,6 +106,8 @@
         [btn addTarget:self action:@selector(toggleSearchbutton:) forControlEvents:UIControlEventTouchUpInside];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
         sBar.hidden = NO;
+        
+        NSLog(@"Cancel");
 
         [self.navigationController.navigationBar addSubview:sBar];
 
@@ -310,16 +326,9 @@ else{
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
-    
     // self.navigationItem.rightBarButtonItem.enabled= NO;
     
     NSLog(@"CLICKED");
-    
-    //self.navigationItem.rightBarButtonItem.enabled = NO;
-    
-    [searchBar setShowsCancelButton:YES animated:YES];
-    
-    
 }
 
 
@@ -327,9 +336,30 @@ else{
 {
       [searchBar setShowsCancelButton:NO animated:YES];
     NSLog(@"start");
-    //self.navigationItem.rightBarButtonItem.enabled = YES;
-    //self.navigationItem.rightBarButtonItem.enabled = NO;
+//    
+//    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
     
+    
+    
+    NSString *str=[NSString stringWithFormat:@"%@",[sBar text]];
+    str=[str capitalizedString];
+    
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(City contains[cd] %@)", str];
+        
+        aPlaceData = [allPlaces filteredArrayUsingPredicate:predicate];
+//
+    
+    
+//        if([[aobject objectForKey:@"City"] isEqualToString:@"Ahmedabad"]){
+//            return YES;
+//        }else{
+//            return NO;
+//        }
+    [_AcollectionView reloadData];
+    
+    //
+    NSLog(@"ghn");
+
     
 }
 
@@ -343,13 +373,22 @@ else{
     [sBar removeFromSuperview];
     self.navigationItem.rightBarButtonItem.enabled = NO;
     
-    
-    
 }
 
 
 - (IBAction)aSearchbaritem:(UIBarButtonItem *)sender {
     
+//    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+//        PFObject *aObject =  evaluatedObject;
+//        if([[aObject objectForKey:@"City"] isEqualToString:@"Ahemedabad"]){
+//            return YES;
+//        }else{
+//            return NO;
+//        }
+//    }];
+//    
+//    Arraymaster = [aPlaceData filteredArrayUsingPredicate:predicate];
+//    NSLog(@"%@",Arraymaster);
     
     sBar.hidden=FALSE;
     sBar.delegate = self;
