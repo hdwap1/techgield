@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "MainViewController.h"
+#import "AppDelegate.h"
+#import <Parse/Parse.h>
+#import "SWRevealViewController.h"
 @interface aLaunch_vc : UIViewController
 - (IBAction)aSkipbtnAct:(UIButton *)sender;
+- (IBAction)aLoginAct:(UIButton *)sender;
+- (IBAction)aNewAccountAct:(UIButton *)sender;
 
 @end
