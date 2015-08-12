@@ -46,6 +46,7 @@
 		9EF8871F1B63AB4F000EB283 /* aLogoutvc.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF8871E1B63AB4F000EB283 /* aLogoutvc.m */; };
 		A92306851B7584E2001B8077 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92306841B7584E2001B8077 /* MapKit.framework */; };
 		A944462A1B7B3F1000D7F587 /* EditProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = A94446291B7B3F1000D7F587 /* EditProfile.m */; };
+		A94446301B7B6BC700D7F587 /* resetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = A944462F1B7B6BC700D7F587 /* resetPassword.m */; };
 		A94B04221B796DFB002432A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A94B04201B796DFB002432A3 /* Main.storyboard */; };
 		A95E56CA1B72E90100506FEC /* PlaceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A95E56C91B72E90100506FEC /* PlaceInfo.m */; };
 		A96601971B72116C0056ADD9 /* aPlaceListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A96601961B72116C0056ADD9 /* aPlaceListCell.m */; };
@@ -155,6 +156,8 @@
 		A92306841B7584E2001B8077 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A94446281B7B3F1000D7F587 /* EditProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfile.h; sourceTree = "<group>"; };
 		A94446291B7B3F1000D7F587 /* EditProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfile.m; sourceTree = "<group>"; };
+		A944462E1B7B6BC700D7F587 /* resetPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resetPassword.h; sourceTree = "<group>"; };
+		A944462F1B7B6BC700D7F587 /* resetPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resetPassword.m; sourceTree = "<group>"; };
 		A94B04211B796DFB002432A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SidebarDemo/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A95E56C81B72E90100506FEC /* PlaceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceInfo.h; sourceTree = "<group>"; };
 		A95E56C91B72E90100506FEC /* PlaceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceInfo.m; sourceTree = "<group>"; };
@@ -406,6 +409,15 @@
 			name = "Edit Profile";
 			sourceTree = "<group>";
 		};
+		A944462D1B7B6AD000D7F587 /* Password reset */ = {
+			isa = PBXGroup;
+			children = (
+				A944462E1B7B6BC700D7F587 /* resetPassword.h */,
+				A944462F1B7B6BC700D7F587 /* resetPassword.m */,
+			);
+			name = "Password reset";
+			sourceTree = "<group>";
+		};
 		A95E56C71B72DB8200506FEC /* aSearchmodule */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,6 +551,7 @@
 		F4090B901A0F67D000651F6F /* SidebarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A944462D1B7B6AD000D7F587 /* Password reset */,
 				A94446271B7B3EF500D7F587 /* Edit Profile */,
 				F4090BC71A0FD74700651F6F /* SWRevealViewController */,
 				F4090B951A0F67D000651F6F /* AppDelegate.h */,
@@ -758,6 +771,7 @@
 				A96601971B72116C0056ADD9 /* aPlaceListCell.m in Sources */,
 				9EC4B59E1B6381900023BF73 /* newtestclass.m in Sources */,
 				9E4CF5D81B77555C00CA0253 /* aMapview_VC.m in Sources */,
+				A94446301B7B6BC700D7F587 /* resetPassword.m in Sources */,
 				F4090BC61A0FD6F800651F6F /* SidebarTableViewController.m in Sources */,
 				A97B9A761B701BD90018A6E2 /* aSearch_vc.m in Sources */,
 				A9AFDBD31B72297E0002D2E9 /* UIView+WebCacheOperation.m in Sources */,

@@ -897,7 +897,7 @@
         <!--Edit Profile-->
         <scene sceneID="QG7-Bd-jQc">
             <objects>
-                <viewController id="TD1-l4-kXe" customClass="EditProfile" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editprofile" id="TD1-l4-kXe" customClass="EditProfile" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rno-6J-1s6"/>
                         <viewControllerLayoutGuide type="bottom" id="n1E-7v-hFt"/>
@@ -929,11 +929,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sJd-hx-tKv">
-                                <rect key="frame" x="84" y="185" width="152" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6U-Eg-wMq">
                                 <rect key="frame" x="268" y="95" width="30" height="30"/>
                                 <state key="normal" title="Edit">
@@ -950,15 +945,6 @@
                                 </state>
                                 <connections>
                                     <action selector="editEmailBtn:" destination="TD1-l4-kXe" eventType="touchUpInside" id="wCf-aY-RJb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdl-JL-gFL">
-                                <rect key="frame" x="268" y="189" width="30" height="32"/>
-                                <state key="normal" title="Edit">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="editPassBtn:" destination="TD1-l4-kXe" eventType="touchUpInside" id="MXa-11-Y4r"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBY-0p-iYF">
@@ -1003,6 +989,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdl-JL-gFL">
+                                <rect key="frame" x="93" y="180" width="30" height="32"/>
+                                <state key="normal" title="Edit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="editPassBtn:" destination="TD1-l4-kXe" eventType="touchUpInside" id="MXa-11-Y4r"/>
+                                    <segue destination="HsH-Gf-4TS" kind="push" id="XcJ-EI-brk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1010,7 +1006,6 @@
                     <connections>
                         <outlet property="Pickervieweditoutlet" destination="kGU-2q-jOB" id="5hz-W6-KgO"/>
                         <outlet property="aUserEditEmail" destination="VzK-9e-bNz" id="rxA-pA-ljz"/>
-                        <outlet property="aUserEditPassword" destination="sJd-hx-tKv" id="L9w-9n-kcV"/>
                         <outlet property="aUserstate" destination="htP-aG-u4Z" id="mSu-IU-2S9"/>
                         <outlet property="auSerEditName" destination="BQC-le-Dm1" id="S4R-kW-KDX"/>
                     </connections>
@@ -1018,6 +1013,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="thN-TB-Moc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-823" y="152"/>
+        </scene>
+        <!--Reset Password-->
+        <scene sceneID="BCm-z1-zNU">
+            <objects>
+                <viewController id="HsH-Gf-4TS" customClass="resetPassword" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MuQ-wk-sqL"/>
+                        <viewControllerLayoutGuide type="bottom" id="hei-Kw-VOg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YMu-s9-Xv5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Current Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdf-yT-0lk">
+                                <rect key="frame" x="75" y="135" width="183" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wne-Fx-xzp">
+                                <rect key="frame" x="108" y="236" width="164" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uh5-1D-bMi">
+                                <rect key="frame" x="19" y="179" width="282" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r8Y-TV-tzy">
+                                <rect key="frame" x="19" y="284" width="282" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BW4-8s-PTG">
+                                <rect key="frame" x="137" y="366" width="39" height="30"/>
+                                <state key="normal" title="Save ">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveAct:" destination="HsH-Gf-4TS" eventType="touchUpInside" id="h3n-qM-2q9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aTF-JN-hpy"/>
+                    <connections>
+                        <outlet property="anewPass" destination="r8Y-TV-tzy" id="YND-IN-th0"/>
+                        <outlet property="currentPass" destination="Uh5-1D-bMi" id="u9S-8v-9xj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FR5-Wf-Iif" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-394" y="154"/>
         </scene>
     </scenes>
     <resources>
