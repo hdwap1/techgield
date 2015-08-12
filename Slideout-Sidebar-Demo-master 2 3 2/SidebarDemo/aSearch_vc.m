@@ -338,13 +338,18 @@ else{
     NSLog(@"start");
 //    
 //    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+    
+    
+    
     NSString *str=[NSString stringWithFormat:@"%@",[sBar text]];
     str=[str capitalizedString];
     
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(City =  %@)", str];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(City contains[cd] %@)", str];
         
         aPlaceData = [allPlaces filteredArrayUsingPredicate:predicate];
-//        
+//
+    
+    
 //        if([[aobject objectForKey:@"City"] isEqualToString:@"Ahmedabad"]){
 //            return YES;
 //        }else{

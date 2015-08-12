@@ -14,12 +14,16 @@
 @property (weak, nonatomic) IBOutlet UITextField *auSerEditName;
 @property (weak, nonatomic) IBOutlet UITextField *aUserEditEmail;
 @property (weak, nonatomic) IBOutlet UITextField *aUserEditPassword;
-@property (weak, nonatomic) IBOutlet UITextField *aUserEditCity;
+
+@property (weak, nonatomic) IBOutlet UITextField *aUserstate;
+
+
 - (IBAction)aSaveProfile:(UIButton *)sender;
 - (IBAction)editPassBtn:(UIButton *)sender;
 - (IBAction)editNameBtn:(UIButton *)sender;
 - (IBAction)editEmailBtn:(UIButton *)sender;
 - (IBAction)editStateBtn:(UIButton *)sender;
+
 @property (weak, nonatomic) IBOutlet UIPickerView *Pickervieweditoutlet;
 
 

@@ -73,16 +73,16 @@
     
     // Do any additional setup after loading the view.
     self.auSerEditName.enabled=NO;
-    self.aUserEditCity.enabled=NO;
+//    self.aUserEditCity.enabled=NO;
     self.aUserEditEmail.enabled=NO;
-    
+    self.aUserstate.enabled = NO;
     
     PFUser *user=[PFUser currentUser];
     NSLog(@"%@",user);
     self.auSerEditName.text=user.username;
     self.aUserEditEmail.text=user.email;
     self.aUserEditPassword.text=user.password;
-    self.aUserEditCity.text=user[@"State"];   
+ self.aUserstate.text=user[@"State"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -102,7 +102,8 @@
 
 - (IBAction)aSaveProfile:(UIButton *)sender {
     PFUser *user=[PFUser currentUser];
-    [user setObject:self.aUserEditCity.text forKey:@"City"];
+     [user setObject:self.aUserstate.text forKey:@"State"];
+
     [user setEmail:self.aUserEditEmail.text];
     [user setUsername:self.auSerEditName.text];
     
@@ -111,6 +112,8 @@
 }
 
 - (IBAction)editPassBtn:(UIButton *)sender {
+    
+    
 }
 
 - (IBAction)editNameBtn:(UIButton *)sender {
@@ -124,11 +127,27 @@
     self.aUserEditEmail.enabled=YES;
 }
 
-- (IBAction)editCityBtn:(UIButton *)sender {
+- (IBAction)editStateBtn:(UIButton *)sender {
     
-    self.aUserEditCity.enabled=YES;
- 
+    self.aUserstate.enabled = YES;
+    
+    _Pickervieweditoutlet.hidden = NO;
+    
+    
+    if([_auSerEditName.text length]>5)
+    {
+        
+        PFUser *user=[PFUser user];
+        pickerrowedit = [_Pickervieweditoutlet selectedRowInComponent:0];
+        Pickerstredit = [pickerDataedit objectAtIndex:pickerrowedit];
+        user[@"State"]=Pickerstredit;
+        
+        
+    }
+    
+    
 }
+
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {

@@ -196,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cih-Oh-6Yi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1305" y="182"/>
+            <point key="canvasLocation" x="-1243" y="152"/>
         </scene>
         <!--My Travel Experience-->
         <scene sceneID="jZ6-Nu-3CT">
@@ -927,11 +927,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VzK-9e-bNz">
-                                <rect key="frame" x="84" y="140" width="152" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sJd-hx-tKv">
                                 <rect key="frame" x="84" y="185" width="152" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -974,7 +969,7 @@
                                     <action selector="aSaveProfile:" destination="TD1-l4-kXe" eventType="touchUpInside" id="UOz-34-UxC"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kGU-2q-jOB">
+                            <pickerView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kGU-2q-jOB">
                                 <rect key="frame" x="0.0" y="297" width="320" height="162"/>
                                 <connections>
                                     <outlet property="dataSource" destination="TD1-l4-kXe" id="2Of-kj-2Ob"/>
@@ -998,24 +993,29 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="editStateBtn:" destination="TD1-l4-kXe" eventType="touchUpInside" id="Of8-g8-p5M"/>
+                                    <action selector="editStateBtn:" destination="TD1-l4-kXe" eventType="touchUpInside" id="2J1-qX-VrO"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VzK-9e-bNz">
+                                <rect key="frame" x="84" y="141" width="152" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="DmC-9U-1kJ"/>
                     <connections>
                         <outlet property="Pickervieweditoutlet" destination="kGU-2q-jOB" id="5hz-W6-KgO"/>
-                        <outlet property="aUserEditCity" destination="sJd-hx-tKv" id="Ofa-CZ-skg"/>
                         <outlet property="aUserEditEmail" destination="VzK-9e-bNz" id="rxA-pA-ljz"/>
                         <outlet property="aUserEditPassword" destination="sJd-hx-tKv" id="L9w-9n-kcV"/>
+                        <outlet property="aUserstate" destination="htP-aG-u4Z" id="mSu-IU-2S9"/>
                         <outlet property="auSerEditName" destination="BQC-le-Dm1" id="S4R-kW-KDX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="thN-TB-Moc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-905" y="172"/>
+            <point key="canvasLocation" x="-823" y="152"/>
         </scene>
     </scenes>
     <resources>
