@@ -28,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.navigationItem.title=[self.array objectForKey:@"Name"];
     
     aManager=[[CLLocationManager alloc]init];
     aManager.delegate=self;
