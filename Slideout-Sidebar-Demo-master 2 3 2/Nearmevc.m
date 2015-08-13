@@ -216,4 +216,18 @@
 //        [self displaymapAnnotation];
 //    
 //}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIStoryboard *aStory=[UIStoryboard storyboardWithName:@"Main2" bundle:nil];
+    
+    PlaceInfo *placeDetail=[aStory instantiateViewControllerWithIdentifier:@"placeinfo"];
+    
+    placeDetail.array=[aNearMePlacesArry objectAtIndex:indexPath.row];
+    
+    //    aMapview_VC *mapviews=[aStory instantiateViewControllerWithIdentifier:@"mapviewvc"];
+    //
+    //    mapviews.array=[aPlaceData objectAtIndex:indexPath.row];
+    
+    [self.navigationController pushViewController:placeDetail animated:YES];
+}
 @end

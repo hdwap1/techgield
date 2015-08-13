@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "PlaceInfo.h"
 @interface Nearmevc : UIViewController<UITableViewDataSource,UITableViewDelegate>
 {
     NSArray *aNearMePlacesArry;
