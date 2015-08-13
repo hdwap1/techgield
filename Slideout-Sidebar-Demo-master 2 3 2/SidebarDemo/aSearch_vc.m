@@ -46,10 +46,6 @@
     
     PFQuery *aQuery=[[PFQuery alloc]initWithClassName:@"Place_Default"];
     
-       ////    [aQuery whereKey:@"State" equalTo:@"Rajasthan"];
-    //    [aQuery setLimit:400];
-    //    aQuery.cachePolicy=kPFCachePolicyNetworkElseCache;
-    
     [aQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             allPlaces=[NSArray arrayWithArray:objects] ;
@@ -65,18 +61,6 @@
         }}];
     
     Arraymaster = [[NSArray alloc]init];
-    
-//    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-//        PFObject *aObject =  evaluatedObject;
-//        if([[aObject objectForKey:@"City"] isEqualToString:@"Ahemedabad"]){
-//            return YES;
-//        }else{
-//            return NO;
-//        }
-//    }];
-//    
-//    Arraymaster = [aPlaceData filteredArrayUsingPredicate:predicate];
-    
     
     
     self.navigationItem.hidesBackButton=YES;
@@ -297,15 +281,35 @@ else{
       [searchBar setShowsCancelButton:NO animated:YES];
     NSLog(@"start");
     
-    NSString *str=[NSString stringWithFormat:@"%@",[sBar text]];
-    str=[str capitalizedString];
+    if (sBar.text && sBar.text.length > 0)
     
+    {
+    
+        NSString *str=[NSString stringWithFormat:@"%@",[sBar text]];
+        str=[str capitalizedString];
+        
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(City contains[cd] %@)", str];
         
         aPlaceData = [allPlaces filteredArrayUsingPredicate:predicate];
+        [_AcollectionView reloadData];
+        [_Acollectionviewslider reloadData];
+        
 
-    [_AcollectionView reloadData];
-    [_Acollectionviewslider reloadData];
+    }
+    
+    else
+    
+    {
+        
+        NSString *str=[NSString stringWithFormat:@"%@",[sBar text]];
+        str=[str capitalizedString];
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(City contains[cd] %@)", str];
+        
+        aPlaceData = [allPlaces filteredArrayUsingPredicate:predicate];
+        [_AcollectionView reloadData];
+        [_Acollectionviewslider reloadData];
+    }
     
     
 }

@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+
 
 @interface forgotpass_vc : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *aForgotPasswordEmail;
 
 @property (weak, nonatomic) IBOutlet UIButton *aforgotResetBtn;
-@property (weak, nonatomic) IBOutlet UILabel *aForgotResetMessage;
 
 
 - (IBAction)forgotPasswordAct:(UIButton *)sender;

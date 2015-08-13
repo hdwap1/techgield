@@ -30,24 +30,8 @@
     [Parse setApplicationId:@"aRdKtgCLpKk9PTOpPgZUHIUutAFDxxOs9vCPIz93" clientKey:@"tAGtNESX10C3fa2sboyMOwO1JMTV9RhMvdyhIjvY"];
 
     _aLoginActivity.hidden=YES;
-    //    self.navigationController.navigationBar.delegate=self;
-    // Do any additional setup after loading the view.
-    //    self.navigationController.navigationBar.barTintColor=[UIColor colorWithRed:0.084 green:0.167 blue:0.249 alpha:1.000];
-  //  self.view.backgroundColor=[UIColor colorWithRed:0.084 green:0.167 blue:0.249 alpha:1.000];
     
     self.navigationController.navigationBar.hidden=FALSE;
-    
-//    UINavigationBar *navbar = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, 320, 64)];
-//    
-//    navbar.backgroundColor = [UIColor redColor];
-//    
-//    [self.view addSubview:navbar];
-    
-    // self.navigationController.navigationBar.titleTextAttributes =@{NSForegroundColorAttributeName: [UIColor grayColor]};
-    
-//    [tf setDelegate:self];
-//    [tf1 setDelegate:self];
-//    
     
     self.aLoginName.delegate=self;
     self.aLoginPassword.delegate=self;
@@ -73,47 +57,20 @@
     [self.view addSubview:self.tf];
     [self.view addSubview:self.tf1];
     
-    
-    
-//    [self.view addSubview:view];
-    
-//    _aLoginbtn.layer.cornerRadius=10;
-//    _aSkipbtn.layer.cornerRadius=10;
-//    _aLogSignUpbtn.layer.cornerRadius=10;
-//    self.navigationItem.backBarButtonItem.tintColor=[UIColor whiteColor];
-//    _aLoginbtn.backgroundColor=[UIColor colorWithRed:5.0/255.0 green:159.0/255 blue:158.0/255 alpha:1.0];
-//    
-//    _aLogSignUpbtn.backgroundColor=[UIColor colorWithRed:5.0/255.0 green:159.0/255 blue:158.0/255 alpha:1.0];
-//    _aSkipbtn.backgroundColor=[UIColor colorWithRed:5.0/255.0 green:159.0/255 blue:158.0/255 alpha:1.0];
-//    _aLopinForgotBtn.backgroundColor=[UIColor colorWithRed:0.084 green:0.167 blue:0.249 alpha:1.000];
-//    _aLoginName.textColor=[UIColor colorWithRed:214/255 green:220/255 blue:224/255 alpha:1.0];
-//    _aLoginPassword.textColor=[UIColor colorWithRed:214/255 green:220/255 blue:224/255 alpha:1.0];
-//    _aLoginName.backgroundColor=[UIColor colorWithRed:0.084 green:0.167 blue:0.249 alpha:1.000];
-//    _aLoginPassword.backgroundColor=[UIColor colorWithRed:0.084 green:0.167 blue:0.249 alpha:1.000];
-//    _aSkipbtn.backgroundColor=[UIColor colorWithRed:0.084 green:0.167 blue:0.249 alpha:1.000];
-//    
-//    _aLoginName.layer.borderColor=[[UIColor  grayColor]CGColor];
-//    _aLoginName.layer.borderWidth=1.0f;
-//    [_aLoginName setTextColor:[UIColor grayColor]];
-//    
-//_aLoginPassword.layer.borderColor=[[UIColor  grayColor]CGColor];
-//_aLoginPassword.layer.borderWidth=1.0f;
-//[_aLoginPassword setTextColor:[UIColor grayColor]];
-//    
-//    
-//[ self.aLoginName setValue:[UIColor darkGrayColor]
-//                    forKeyPath:@"_placeholderLabel.textColor"];
-//    [self.aLoginPassword setValue:[UIColor darkGrayColor]
-//                       forKeyPath:@"_placeholderLabel.textColor"];
-
-  
 
 
 }
 
 
 
+-(void)viewWillDisappear:(BOOL)animated
 
+{
+
+     _aLoginActivity.hidden=YES;
+
+    
+}
 
 
 
@@ -124,15 +81,6 @@
     [alrt show];
 
 }
-
-//-(BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(UINavigationItem *)item
-//{
-//    NSLog(@"Back button got pressed!");
-//    [self.navigationController popToRootViewControllerAnimated:YES];
-//    return YES;
-//}
-
-
 
 
 - (void)didReceiveMemoryWarning {
@@ -176,14 +124,10 @@
                                         else{
                                             UIAlertView *alr=[[UIAlertView alloc]initWithTitle:@"Usearname and password does not match" message:@"Please check your usename and password" delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
                                             [alr show];
+                                            _aLoginActivity.hidden=YES;
 
                                         }
                                     }];
-    
-    
-//    AppDelegate *appDelegate = (AppDelegate*) [UIApplication sharedApplication].delegate;
-//    
-//    appDelegate.userstate = TRUE;
     
 }
 

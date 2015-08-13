@@ -11,6 +11,7 @@
 #import "addTripHome_vc.h"
 #import "aSearch_vc.h"
 #import "AppDelegate.h"
+#import "Tripmodule_vc.h"
 
 @interface MainViewController ()<UITextFieldDelegate, UIGestureRecognizerDelegate>
 
@@ -45,7 +46,7 @@
     
     //to hide back button
     
-    self.navigationItem.hidesBackButton=YES;
+  //  self.navigationItem.hidesBackButton=YES;
     
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
@@ -64,30 +65,6 @@
 }
 
 
-//-(void)toggleSearchbutton:(UIBarButtonItem*)sender{
-//    if(!isSearchEnabled){
-//        UIButton *btn  = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
-//        [btn setImage:[UIImage imageNamed:@"acancel.png"] forState:UIControlStateNormal];
-//        [btn addTarget:self action:@selector(toggleSearchbutton:) forControlEvents:UIControlEventTouchUpInside];
-//        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
-//        sBar.hidden = NO;
-//        
-//        [self.navigationController.navigationBar addSubview:sBar];
-//        
-//    }else{
-//        UIButton *btn  = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
-//        [btn setImage:[UIImage imageNamed:@"asearch.png"] forState:UIControlStateNormal];
-//        [btn addTarget:self action:@selector(toggleSearchbutton:) forControlEvents:UIControlEventTouchUpInside];
-//        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
-//        sBar.hidden = YES;
-//        [sBar removeFromSuperview];
-//        
-//        
-//        
-//    }
-//    isSearchEnabled =  !isSearchEnabled;
-//}
-
 
 
 
@@ -95,24 +72,6 @@
     
     
 }
-
-
-//-(void)handleTapFrom:(UITapGestureRecognizer*)sender
-//
-//{
-//    
-//    [sBar removeFromSuperview];
-//    self.navigationItem.rightBarButtonItem.enabled= YES;
-//    UIButton *btn  = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
-//    [btn setImage:[UIImage imageNamed:@"asearch.png"] forState:UIControlStateNormal];
-//    [btn addTarget:self action:@selector(toggleSearchbutton:) forControlEvents:UIControlEventTouchUpInside];
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
-//    sBar.hidden = YES;
-//    [sBar removeFromSuperview];
-//    
-//}
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -139,6 +98,18 @@
         
         [alrt show];
     }
+    
+        else
+            
+        {
+            UIStoryboard *aStory=[UIStoryboard storyboardWithName:@"Main2" bundle:nil];
+            Tripmodule_vc *aTripvc=[aStory instantiateViewControllerWithIdentifier:@"aTripvc"];
+            [self.navigationController pushViewController:aTripvc animated:YES];
+        }
+    
+    
+    
+    
 
 }
 
