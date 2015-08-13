@@ -30,8 +30,6 @@
     
     
     pickerData = @[
-    
-    @"State/Union Territory",
     @"Andaman and Nicobar Islands",
     @"Andhra Pradesh",
     @"Arunachal Pradesh",
@@ -41,7 +39,7 @@
     @"Chhattisgarh",
     @"Dadra and Nagar Haveli",
     @"Daman and Diu",
-    @"National Capital Territory of Delhi",
+    @"Delhi",
     @"Goa",
     @"Gujarat",
     @"Haryana",
