@@ -49,7 +49,15 @@
     [aQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             aNearMePlacesArry=[[NSArray alloc]initWithArray:objects];
-             NSLog(@"%@",aNearMePlacesArry);
+            
+            if(aNearMePlacesArry.count==0)
+            {
+                UIAlertView *alrt = [[UIAlertView alloc] initWithTitle:@"No near by places" message:@"Sorry,there is no nearby traveling places around you" delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
+                
+                [alrt show];
+                
+            }
+            //NSLog(@"%@",aNearMePlacesArry);
            // [testLatArry addObjectsFromArray:[[aNea]]]
             
           //  [testLatArry addObject:[[aNearMePlacesArry objectAtIndex:indexPath.row]objectForKey:@"Lattitude"]];
@@ -229,5 +237,9 @@
     //    mapviews.array=[aPlaceData objectAtIndex:indexPath.row];
     
     [self.navigationController pushViewController:placeDetail animated:YES];
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
 }
 @end

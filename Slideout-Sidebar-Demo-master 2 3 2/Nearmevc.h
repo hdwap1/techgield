@@ -12,7 +12,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "PlaceInfo.h"
-@interface Nearmevc : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface Nearmevc : UIViewController<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
 {
     NSArray *aNearMePlacesArry;
     NSMutableArray *testLatArry;
