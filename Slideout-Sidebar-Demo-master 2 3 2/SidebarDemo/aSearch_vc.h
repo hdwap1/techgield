@@ -15,14 +15,18 @@
     NSArray *aPlaceData;
     PFObject *aobject;
     NSArray *allPlaces;
+    NSTimer *Timer;
 }
 //-(void)centerScrollViewContents;
 //-(void)scrollViewDoubleTapped:(UITapGestureRecognizer*)recognizer;
 //-(void)scrollViewTwoFingerTapped:(UITapGestureRecognizer*)recognizer;
 @property (weak, nonatomic) IBOutlet UICollectionView *AcollectionView;
 
+@property (strong, nonatomic) UICollectionView *collectionView;
+@property (strong, nonatomic) UIPageControl *pageControl;
+
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *aSearchtripbarbtn;
-@property (weak, nonatomic) IBOutlet UIScrollView *aScrollview;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *Acollectionviewslider;
 @property (weak,nonatomic) NSString *searchtext;
