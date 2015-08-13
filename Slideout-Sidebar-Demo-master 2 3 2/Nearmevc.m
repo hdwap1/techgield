@@ -111,7 +111,7 @@
         
         //[_SecondMapview setCenterCoordinate:coordinate animated:YES];
         
-        
+        NSLog(@"hi");
         // mapview controller
         
         

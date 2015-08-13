@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>43D2FCC8-777D-4276-B21E-17C264E45373</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>SidebarDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>10E9600B06AF99E06F51FF3A4695A172DC661726</key>
 		<string>https://github.com/hdwap1/techgield.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Slideout-Sidebar-Demo-master 2 3 2/SidebarDemo.xcodeproj/project.xcworkspace</string>
+	<string>Slideout-Sidebar-Demo-master 2 3 2/SidebarDemo.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>10E9600B06AF99E06F51FF3A4695A172DC661726</key>
