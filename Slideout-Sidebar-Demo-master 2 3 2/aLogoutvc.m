@@ -49,8 +49,19 @@
     if([PFUser user])
     {
     [PFUser logOut];
-    aLaunch_vc *aHome=[self.storyboard instantiateViewControllerWithIdentifier:@"launchvc"];
-    //[self presentViewController:aHome animated:YES completion:nil];
+        
+        aLaunch_vc *aHome = [self.storyboard instantiateViewControllerWithIdentifier:@"launchvc"];
+        
+        
+//        aLaunch_vc *aHome= [[aLaunch_vc alloc]init];
+//        [self.navigationController popToRootViewControllerAnimated:aHome];
+        
+        
+        //[self.storyboard instantiateViewControllerWithIdentifier:@"launchvc"];
+    
+
+        [self.navigationController pushViewController:aHome animated:YES];
+        
     }
     
 }

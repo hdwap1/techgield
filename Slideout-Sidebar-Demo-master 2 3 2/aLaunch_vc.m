@@ -19,24 +19,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    }
+    
     self.navigationController.navigationBar.hidden=TRUE;
     if([PFUser currentUser])
     {
         SWRevealViewController *swReveal=[self.storyboard instantiateViewControllerWithIdentifier:@"demo"];
         [self presentViewController:swReveal animated:YES completion:nil];
+        
+        
     }
-    
 
-    
-    
-//    self.navigationController.navigationBar.hidden=FALSE;
-//    self.navigationController.navigationBarHidden=TRUE;
-//
-//        UINavigationBar *navbar = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
-//    
-//        navbar.backgroundColor = [UIColor redColor];
-//    
-//        [self.view addSubview:navbar];
     
 }
 
