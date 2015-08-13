@@ -14,6 +14,9 @@
 @interface Nearmevc : UIViewController<UITableViewDataSource,UITableViewDelegate>
 {
     NSArray *aNearMePlacesArry;
+    NSMutableArray *testLatArry;
+    NSMutableArray *testLongArry;
+    NSMutableArray *testName;
 }
 @property (strong,nonatomic) NSString *aUserState;
 @property (weak, nonatomic) IBOutlet UITableView *aNearMeTable;
@@ -21,5 +24,6 @@
 @property (strong,nonatomic) NSString *strLong;
 @property (strong,nonatomic) NSString *strLat;
 @property (weak, nonatomic) IBOutlet MKMapView *aPlaceMap;
+@property (strong,nonatomic) NSMutableArray *arry;
 
 @end

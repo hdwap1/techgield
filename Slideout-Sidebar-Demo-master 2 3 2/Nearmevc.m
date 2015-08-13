@@ -15,8 +15,8 @@
     
     CLLocationManager *aManager;
     
-    NSArray *latArry;
-    NSArray *longArry;
+    NSMutableArray *latArry;
+    NSMutableArray *longArry;
 
 }
 
@@ -26,7 +26,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    testLatArry=[[NSMutableArray alloc]init];
+    
+    
+    testLongArry=[[NSMutableArray alloc]init];
+    testName=[[NSMutableArray alloc]init];
+
     // Do any additional setup after loading the view.
+    [Parse setApplicationId:@"aRdKtgCLpKk9PTOpPgZUHIUutAFDxxOs9vCPIz93" clientKey:@"tAGtNESX10C3fa2sboyMOwO1JMTV9RhMvdyhIjvY"];
+    latArry=[[NSMutableArray alloc]init];
+    longArry=[[NSMutableArray alloc]init];
     PFUser *user=[PFUser currentUser];
     self.aUserState=user[@"State"];
     NSLog(@"%@",self.aUserState);
@@ -40,9 +50,25 @@
         if (!error) {
             aNearMePlacesArry=[[NSArray alloc]initWithArray:objects];
              NSLog(@"%@",aNearMePlacesArry);
+           // [testLatArry addObjectsFromArray:[[aNea]]]
+            
+          //  [testLatArry addObject:[[aNearMePlacesArry objectAtIndex:indexPath.row]objectForKey:@"Lattitude"]];
+          //  [testLongArry addObject:[[aNearMePlacesArry objectAtIndex:indexPath.row]objectForKey:@"Longitude"]];
+
+            
             [self.aNearMeTable reloadData];
             
-            
+           //
+            for (PFObject *obj in objects) {
+                NSLog(@"%@",obj);
+                [testLatArry addObject:[obj objectForKey:@"Lattitude"]];
+                [testLongArry addObject:[obj objectForKey:@"Longitude"]];
+                [testName addObject:[obj objectForKey:@"Name"]];
+               if(testLatArry.count==objects.count)
+               {
+                   [self displaymapAnnotation];
+               }
+            }
             
         }
         else{
@@ -50,6 +76,17 @@
         }
     }];
     
+    
+//    PFQuery *reportNumber=[PFQuery queryWithClassName:@"Place_Default"];
+//    [reportNumber whereKey:@"State" equalTo:user[@"State"]];
+//    [reportNumber getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error){
+//       
+//        [testLatArry addObject:[object objectForKey:@"Lattitude"]];
+//        
+//        [testLatArry addObject:[object objectForKey:@"Longitude"]];
+//
+//        
+//    }];
    
 }
 
@@ -57,7 +94,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+}
 /*
 #pragma mark - Navigation
 
@@ -71,6 +111,7 @@
 {
     if(aNearMePlacesArry.count>0)
     {
+        
     return aNearMePlacesArry.count;
     }
     return 0;
@@ -84,44 +125,95 @@
     cell.aNearMePlaceName.text=[[aNearMePlacesArry objectAtIndex:indexPath.row]objectForKey:@"Name"];
     cell.aNearMePlaceCity.text=[[aNearMePlacesArry objectAtIndex:indexPath.row]objectForKey:@"City"];
     
+
+   
     
-    self.strLat=[[aNearMePlacesArry objectAtIndex:indexPath.row]objectForKey:@"Lattitude"];
-    self.strLong=[[aNearMePlacesArry objectAtIndex:indexPath.row]objectForKey:@"Longitude"];
     
-     CLLocation *locate = [[CLLocation alloc]
-                          initWithLatitude:[self.strLat doubleValue] longitude: [self.strLong doubleValue]];
+//    self.strLat=[[aNearMePlacesArry objectAtIndex:indexPath.row]objectForKey:@"Lattitude"];
+//    self.strLong=[[aNearMePlacesArry objectAtIndex:indexPath.row]objectForKey:@"Longitude"];
+//    _arry=[[NSMutableArray alloc]initWithObjects:[[aNearMePlacesArry objectAtIndex:indexPath.row]objectForKey:@"Lattitude"]];
     
-    [geo reverseGeocodeLocation:locate completionHandler:^(NSArray *placemarks, NSError *error) {
-        CLLocationCoordinate2D coordinate=locate.coordinate;
-        MKPointAnnotation *annot = [[MKPointAnnotation alloc] init];
-        annot.coordinate=coordinate;
-        CLPlacemark *mark=[placemarks objectAtIndex:0];
-        
-        annot.title = mark.name;
-        annot.subtitle = mark.country;
-        
-        [self.aPlaceMap addAnnotation:annot];
-        
-        [self.aPlaceMap addAnnotation:annot];
-        [_aPlaceMap setCenterCoordinate:coordinate animated:YES];
-        
-        
-        [self.aPlaceMap addAnnotation:annot];
-        // [self.SecondMapview addAnnotation:annot];
-        
-        //[_SecondMapview setCenterCoordinate:coordinate animated:YES];
-        
-        
-        // mapview controller
-        
-        
-        
-        
-        //         map view as a sub view
-        
-        [_aPlaceMap setCenterCoordinate:coordinate animated:YES];
-    }];
-    return cell;
+    
+  
+        return cell;
+   
     
 }
+-(void)displaymapAnnotation
+{
+//    for (NSInteger i=0; i<testLatArry.count; i++) {
+    
+//    NSLog(@"displaymapAnnotation");
+//    
+//    CLLocation *locate = [[CLLocation alloc]
+//                          initWithLatitude:[[testLatArry firstObject] doubleValue] longitude: [[testLongArry firstObject] doubleValue]];
+//    
+//        if(!geo){
+//            geo = [[CLGeocoder alloc]init];
+//        }
+//    [geo reverseGeocodeLocation:locate completionHandler:^(NSArray *placemarks, NSError *error) {
+//        
+//        CLLocationCoordinate2D coordinate=locate.coordinate;
+//        MKPointAnnotation *annot = [[MKPointAnnotation alloc] init];
+//        annot.coordinate=coordinate;
+//        CLPlacemark *mark=[placemarks objectAtIndex:0];
+//        
+//        annot.title = mark.name;
+//        annot.subtitle = mark.country;
+//        
+//        
+//        //[_aPlaceMap addAnnotation:annot];
+//        //[_aPlaceMap addAnnotations:<#(NSArray *)#>];
+//        
+// 
+//        [_aPlaceMap setCenterCoordinate:coordinate animated:YES];
+//            
+//
+////        [testLatArry removeObjectAtIndex:i];
+////        [testLongArry removeObjectAtIndex:i];
+//            }];
+//        [testLatArry removeObjectAtIndex:0];
+//        [testLongArry removeObjectAtIndex:0];
+////        [testLongArry removeAllObjects];
+//    
+//
+    
+    NSMutableArray* annotations = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < testLatArry.count; i++)
+    {
+        
+        MKPointAnnotation* marker = [[MKPointAnnotation alloc] init];
+        
+        CLLocationCoordinate2D Newcoordinate;
+        Newcoordinate.latitude=[[testLatArry objectAtIndex:i]doubleValue];
+        Newcoordinate.longitude=[[testLongArry objectAtIndex:i]doubleValue];
+        
+        marker.coordinate=Newcoordinate;
+        marker.title=[testName objectAtIndex:i];
+    //marker.coordinate.latitude=
+        [annotations addObject:marker];
+        //MKCoordinateSpan span = MKCoordinateSpanMake(30.59f,0.0001f);
+        //MKCoordinateRegion region = {Newcoordinate, span};
+        //MKCoordinateRegion regionThatFits = [self.aPlaceMap regionThatFits:region];
+        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(Newcoordinate, 30000, 30000);
+        MKCoordinateRegion adjustedRegion = [self.aPlaceMap regionThatFits:viewRegion];
+        [self.aPlaceMap setRegion:adjustedRegion animated:YES];
+        //[self.aPlaceMap setRegion:regionThatFits animated:YES];
+        
+    }
+    
+    [_aPlaceMap addAnnotations:annotations];
+    //[_aPlaceMap setr]
+    
+    
+   
+}
+//-(void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//   
+//        
+//        [self displaymapAnnotation];
+//    
+//}
 @end
