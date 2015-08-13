@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "aLaunch_vc.h"
 
 @interface aLogoutvc : UIViewController
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *aLogoutbarbtn;
+
+- (IBAction)aLogoutAct:(UIButton *)sender;
 
 @end

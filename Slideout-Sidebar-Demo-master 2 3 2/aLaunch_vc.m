@@ -8,6 +8,7 @@
 
 #import "aLaunch_vc.h"
 #import "MainViewController.h"
+#import "AppDelegate.h"
 
 @interface aLaunch_vc ()
 
@@ -18,23 +19,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationController.navigationBar.hidden=TRUE;
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    }
     
-//    self.navigationController.navigationBar.hidden=FALSE;
-//    self.navigationController.navigationBarHidden=TRUE;
-//
-//        UINavigationBar *navbar = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
-//    
-//        navbar.backgroundColor = [UIColor redColor];
-//    
-//        [self.view addSubview:navbar];
+    self.navigationController.navigationBar.hidden=TRUE;
+    if([PFUser currentUser])
+    {
+        SWRevealViewController *swReveal=[self.storyboard instantiateViewControllerWithIdentifier:@"demo"];
+        [self presentViewController:swReveal animated:YES completion:nil];
+        
+        
+    }
+
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
+   }
 
 -(void)viewWillAppear:(BOOL)animated {
 
@@ -57,5 +61,23 @@ self.navigationController.navigationBar.hidden=TRUE;
     MainViewController *main=[self.storyboard instantiateViewControllerWithIdentifier:@"mainvc"];
     main.navigationController.navigationBar.hidden=NO;
     
+    AppDelegate *appDelegate = (AppDelegate*) [UIApplication sharedApplication].delegate;
+    
+    appDelegate.userstate = TRUE;
+    
+}
+
+- (IBAction)aLoginAct:(UIButton *)sender {
+    AppDelegate *appDelegate = (AppDelegate*) [UIApplication sharedApplication].delegate;
+    
+    appDelegate.userstate = FALSE;
+
+}
+
+- (IBAction)aNewAccountAct:(UIButton *)sender {
+    AppDelegate *appDelegate = (AppDelegate*) [UIApplication sharedApplication].delegate;
+    
+    appDelegate.userstate = FALSE;
+
 }
 @end

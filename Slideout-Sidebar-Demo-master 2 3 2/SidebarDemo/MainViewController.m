@@ -10,6 +10,7 @@
 #import "SWRevealViewController.h"
 #import "addTripHome_vc.h"
 #import "aSearch_vc.h"
+#import "AppDelegate.h"
 
 @interface MainViewController ()<UITextFieldDelegate, UIGestureRecognizerDelegate>
 
@@ -26,6 +27,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+  
+    
+    
     //self.view.backgroundColor=[UIColor colorWithRed:0.084 green:0.167 blue:0.249 alpha:1.000];
     
 //    UITapGestureRecognizer *tapgesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTapFrom:)];
@@ -42,7 +47,6 @@
     
     self.navigationItem.hidesBackButton=YES;
     
-    
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
@@ -50,6 +54,7 @@
         [self.sidebarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
+
     
     
 //    UIButton *btn  = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
@@ -127,9 +132,31 @@
 
 
 - (IBAction)aAddtrip:(UIButton *)sender {
+    AppDelegate *appDelegate = (AppDelegate*) [UIApplication sharedApplication].delegate;
+    if(appDelegate.userstate==TRUE)
+    {
+        UIAlertView *alrt = [[UIAlertView alloc] initWithTitle:@"Login/Register Required" message:@"Please login/Register to use thi feature" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles: @"Login/Register",nil];
+        
+        [alrt show];
+    }
+
 }
 
 - (IBAction)aNearme:(UIButton *)sender {
+      AppDelegate *appDelegate = (AppDelegate*) [UIApplication sharedApplication].delegate;
+    if(appDelegate.userstate==TRUE)
+    {
+        UIAlertView *alrt = [[UIAlertView alloc] initWithTitle:@"Login/Register Required" message:@"Please login/Register to use thi feature" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles: @"Login/Register",nil];
+        
+        [alrt show];
+    }
+    else
+    {
+        UIStoryboard *aStory=[UIStoryboard storyboardWithName:@"Main2" bundle:nil];
+        Nearmevc *near=[aStory instantiateViewControllerWithIdentifier:@"nearmevc"];
+        [self.navigationController pushViewController:near animated:YES];
+    }
+    
 }
 
 - (IBAction)aSearchtrip:(UIButton *)sender {
@@ -140,6 +167,14 @@
 
     
     
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex==1)
+    {
+        aLaunch_vc *aHome=[self.storyboard instantiateViewControllerWithIdentifier:@"launchvc"];
+        [self.navigationController pushViewController:aHome animated:YES];
+    }
 }
 
 
