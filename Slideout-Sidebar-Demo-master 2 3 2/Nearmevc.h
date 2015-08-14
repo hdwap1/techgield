@@ -26,5 +26,7 @@
 @property (strong,nonatomic) NSString *strLat;
 @property (weak, nonatomic) IBOutlet MKMapView *aPlaceMap;
 @property (strong,nonatomic) NSMutableArray *arry;
+@property (weak, nonatomic) IBOutlet UILabel *aNearByPlaceHeading;
+
 
 @end

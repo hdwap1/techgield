@@ -300,13 +300,13 @@ else{
     else
     
     {
-        
-        NSString *str=[NSString stringWithFormat:@"%@",[sBar text]];
-        str=[str capitalizedString];
-        
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(City contains[cd] %@)", str];
-        
-        aPlaceData = [allPlaces filteredArrayUsingPredicate:predicate];
+        aPlaceData=[[NSArray alloc]initWithArray:allPlaces];
+//        NSString *str=[NSString stringWithFormat:@"%@",[sBar text]];
+//        str=[str capitalizedString];
+//        
+//        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(City contains[cd] %@)", str];
+//        
+//        aPlaceData = [allPlaces filteredArrayUsingPredicate:predicate];
         [_AcollectionView reloadData];
         [_Acollectionviewslider reloadData];
     }

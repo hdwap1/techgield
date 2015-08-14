@@ -11,5 +11,6 @@
 @interface NearMeTable : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *aNearMePlaceName;
 @property (weak, nonatomic) IBOutlet UILabel *aNearMePlaceCity;
+@property (weak, nonatomic) IBOutlet UILabel *aNearMeIndex;
 
 @end
