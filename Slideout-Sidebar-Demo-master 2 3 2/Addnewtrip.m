@@ -18,11 +18,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+<<<<<<< HEAD
     _Addtriptextview.layer.borderColor = ([UIColor blackColor].CGColor);
     _Addtriptextview.layer.borderWidth = 2;
     _Addtriptextview.layer.cornerRadius = 5;
   
   
+=======
+  [Parse setApplicationId:@"aRdKtgCLpKk9PTOpPgZUHIUutAFDxxOs9vCPIz93" clientKey:@"tAGtNESX10C3fa2sboyMOwO1JMTV9RhMvdyhIjvY"];
+    AddTripObj =[[PFObject alloc]initWithClassName:@"Place_By_User"];
+    
+    
+
+>>>>>>> 506553899d4e3830b754992c2cf585dcc496a65c
     
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
@@ -113,9 +121,16 @@
 
 
 - (IBAction)Uploadtripbtnaction:(UIButton *)sender {
+    [AddTripObj addObject:self.addTripName.text forKey:@"Place_Name"];
+    
+    [AddTripObj addObject:[PFUser currentUser].objectId forKey:@"Connect_user_id"];
+    NSLog(@"%@",[[PFUser currentUser]objectId]);
+    [AddTripObj saveInBackground];
+    
 }
 
 - (IBAction)Uploadimagebtnaction:(UIButton *)sender {
+    
 }
 - (IBAction)Addtripbarbtnaction:(UIBarButtonItem *)sender {
 }
