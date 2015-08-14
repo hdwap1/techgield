@@ -120,7 +120,7 @@ self.view.backgroundColor = [UIColor colorWithRed:0.710 green:0.710 blue:0.616 a
                          
                      } completion:^(BOOL finished) {
                          
-                         NSLog(@"Finished!");
+                         
                          
                         
                      }];
