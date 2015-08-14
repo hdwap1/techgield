@@ -10,9 +10,12 @@
 #import <Parse/Parse.h>
 #import "SWRevealViewController.h"
 #import "aProfilevc.h"
+#import "DownPicker.h"
+
 @interface signup_vc : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *aSignupName;
+@property (strong, nonatomic) DownPicker *downPicker;
 @property (weak, nonatomic) IBOutlet UITextField *aSignupEmail;
 @property (weak, nonatomic) IBOutlet UITextField *aSignupPassword;
 @property (weak, nonatomic) IBOutlet UITextField *aSignupCity;
@@ -24,5 +27,6 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *aPickerviewoutlet;
 @property (weak, nonatomic) IBOutlet UIView *aPickerviewUI;
 - (IBAction)addstateaction:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UITextField *Addstatetextfield;
 
 @end

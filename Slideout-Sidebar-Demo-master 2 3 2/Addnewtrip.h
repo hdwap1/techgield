@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DownPicker.h"
 
-@interface Addnewtrip : UIViewController <UIScrollViewDelegate>
+@interface Addnewtrip : UIViewController <UIScrollViewDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) DownPicker *downPicker;
 @property (weak, nonatomic) IBOutlet UITextField *Addtripstate;

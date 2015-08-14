@@ -18,6 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _Addtriptextview.layer.borderColor = ([UIColor blackColor].CGColor);
+    _Addtriptextview.layer.borderWidth = 2;
+    _Addtriptextview.layer.cornerRadius = 5;
+  
   
     
     SWRevealViewController *revealViewController = self.revealViewController;
@@ -86,6 +90,8 @@
     // bind yourTextField to DownPicker
     self.downPicker = [[DownPicker alloc] initWithTextField:self.Addtripstate withData:stateArray];
 
+    
+    
 }
 /*
 #pragma mark - Navigation
@@ -96,6 +102,15 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+
+    [_Addtripcity resignFirstResponder];
+    [_Addtripstate resignFirstResponder];
+    return true;
+    
+}
+
 
 - (IBAction)Uploadtripbtnaction:(UIButton *)sender {
 }

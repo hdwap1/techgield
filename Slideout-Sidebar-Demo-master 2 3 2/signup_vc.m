@@ -8,6 +8,7 @@
 
 #import "signup_vc.h"
 #import "AppDelegate.h"
+#import "DownPicker.h"
 
 @interface signup_vc ()
 {
@@ -26,49 +27,49 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
   
-    Pickerstr = [[NSString alloc]init];
-    
-    
-    pickerData = @[
-    @"Andaman and Nicobar Islands",
-    @"Andhra Pradesh",
-    @"Arunachal Pradesh",
-    @"Assam",
-    @"Bihar",
-    @"Chandigarh",
-    @"Chhattisgarh",
-    @"Dadra and Nagar Haveli",
-    @"Daman and Diu",
-    @"Delhi",
-    @"Goa",
-    @"Gujarat",
-    @"Haryana",
-    @"Himachal Pradesh",
-    @"Jammu and Kashmir",
-    @"Jharkhand",
-    @"Karnataka",
-    @"Kerala",
-    @"Lakshadweep",
-    @"Madhya Pradesh",
-    @"Maharashtra",
-    @"Manipur",
-    @"Meghalaya",
-    @"Mizoram",
-    @"Nagaland",
-    @"Odisha",
-    @"Puducherry",
-    @"Punjab",
-    @"Rajasthan",
-    @" Sikkim",
-    @"Telangana",
-    @"Tripura",
-    @"Uttar Pradesh",
-    @"Uttarakhand",
-    @"West Bengal"
-    ];
-    
-    self.aPickerviewoutlet.dataSource = self;
-    self.aPickerviewoutlet.delegate = self;
+//    Pickerstr = [[NSString alloc]init];
+//    
+//    
+//    pickerData = @[
+//    @"Andaman and Nicobar Islands",
+//    @"Andhra Pradesh",
+//    @"Arunachal Pradesh",
+//    @"Assam",
+//    @"Bihar",
+//    @"Chandigarh",
+//    @"Chhattisgarh",
+//    @"Dadra and Nagar Haveli",
+//    @"Daman and Diu",
+//    @"Delhi",
+//    @"Goa",
+//    @"Gujarat",
+//    @"Haryana",
+//    @"Himachal Pradesh",
+//    @"Jammu and Kashmir",
+//    @"Jharkhand",
+//    @"Karnataka",
+//    @"Kerala",
+//    @"Lakshadweep",
+//    @"Madhya Pradesh",
+//    @"Maharashtra",
+//    @"Manipur",
+//    @"Meghalaya",
+//    @"Mizoram",
+//    @"Nagaland",
+//    @"Odisha",
+//    @"Puducherry",
+//    @"Punjab",
+//    @"Rajasthan",
+//    @" Sikkim",
+//    @"Telangana",
+//    @"Tripura",
+//    @"Uttar Pradesh",
+//    @"Uttarakhand",
+//    @"West Bengal"
+//    ];
+//    
+//    self.aPickerviewoutlet.dataSource = self;
+//    self.aPickerviewoutlet.delegate = self;
     
     [Parse setApplicationId:@"aRdKtgCLpKk9PTOpPgZUHIUutAFDxxOs9vCPIz93" clientKey:@"tAGtNESX10C3fa2sboyMOwO1JMTV9RhMvdyhIjvY"];
    
@@ -93,6 +94,58 @@
     
     
 }
+
+
+-(void)viewDidAppear:(BOOL)animated
+
+{
+    
+    NSMutableArray* stateArray = [[NSMutableArray alloc] init];
+    
+    // add some sample data
+    [stateArray addObject:@"Andaman and Nicobar Islands"];
+    [stateArray addObject: @"Andhra Pradesh"];
+    [stateArray addObject:@"Arunachal Pradesh"];
+    [stateArray addObject:@"Assam"];
+    [stateArray addObject:@"Bihar"];
+    [stateArray addObject:@"Chandigarh"];
+    [stateArray addObject:@"Chhattisgarh"];
+    [stateArray addObject:@"Dadra and Nagar Haveli"];
+    [stateArray addObject:@"Daman and Diu"];
+    [stateArray addObject:@"Delhi"];
+    [stateArray addObject:@"Goa"];
+    [stateArray addObject:@"Gujarat"];
+    [stateArray addObject:@"Haryana"];
+    [stateArray addObject:@"Himachal Pradesh"];
+    [stateArray addObject:@"Jammu and Kashmir"];
+    [stateArray addObject:@"Jharkhand"];
+    [stateArray addObject:@"Karnataka"];
+    [stateArray addObject:@"Kerala"];
+    [stateArray addObject:@"Lakshadweep"];
+    [stateArray addObject:@"Madhya Pradesh"];
+    [stateArray addObject:@"Maharashtra"];
+    [stateArray addObject:@"Manipur"];
+    [stateArray addObject:@"Meghalaya"];
+    [stateArray addObject:@"Mizoram"];
+    [stateArray addObject:@"Nagaland"];
+    [stateArray addObject:@"Odisha"];
+    [stateArray addObject:@"Puducherry"];
+    [stateArray addObject:@"Punjab"];
+    [stateArray addObject:@"Rajasthan"];
+    [stateArray addObject:@"Sikkim"];
+    [stateArray addObject:@"Telangana"];
+    [stateArray addObject:@"Tripura"];
+    [stateArray addObject:@"Uttar Pradesh"];
+    [stateArray addObject:@"Uttarakhand"];
+    [stateArray addObject:@"West Bengal"];
+    
+    // bind yourTextField to DownPicker
+    self.downPicker = [[DownPicker alloc] initWithTextField: self.Addstatetextfield withData:stateArray];
+    
+    
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -155,47 +208,6 @@
     [self.view addSubview:self.aSignupCity];
 
     
-    
-    
-    
-//    _aSignupName.backgroundColor= [UIColor colorWithRed:0.084 green:0.167 blue:0.249 alpha:1.000];
-//    _aSignupEmail.backgroundColor= [UIColor colorWithRed:0.084 green:0.167 blue:0.249 alpha:1.000];
-//    _aSignupPassword.backgroundColor= [UIColor colorWithRed:0.084 green:0.167 blue:0.249 alpha:1.000];
-//    _aSignupCity.backgroundColor= [UIColor colorWithRed:0.084 green:0.167 blue:0.249 alpha:1.000];
-//    _aSignupGender.backgroundColor= [UIColor colorWithRed:0.084 green:0.167 blue:0.249 alpha:1.000];
-//    
-//    _aSignuBbtn.backgroundColor = [UIColor colorWithRed:5.0/255.0 green:159.0/255 blue:158.0/255 alpha:1.0];
-//    
-//    [self.aSignupName setValue:[UIColor darkGrayColor]
-//                    forKeyPath:@"_placeholderLabel.textColor"];
-//    [self.aSignupEmail setValue:[UIColor darkGrayColor]
-//                       forKeyPath:@"_placeholderLabel.textColor"];
-//    
-//    [self.aSignupPassword setValue:[UIColor darkGrayColor]
-//                    forKeyPath:@"_placeholderLabel.textColor"];
-//    [self.aSignupCity setValue:[UIColor darkGrayColor]
-//                    forKeyPath:@"_placeholderLabel.textColor"];
-//    
-//    _aSignupName.layer.borderColor=[[UIColor  grayColor]CGColor];
-//    _aSignupName.layer.borderWidth=1.0f;
-//    
-//    _aSignupEmail.layer.borderColor=[[UIColor  grayColor]CGColor];
-//    _aSignupEmail.layer.borderWidth=1.0f;
-//    
-//    _aSignupPassword.layer.borderColor=[[UIColor  grayColor]CGColor];
-//    _aSignupPassword.layer.borderWidth=1.0f;
-//    
-//    _aSignupCity.layer.borderColor=[[UIColor  grayColor]CGColor];
-//    _aSignupCity.layer.borderWidth=1.0f;
-//
-//    
-//    
-//       [_aSignupName setTextColor:[UIColor grayColor]];
-////       [_aSignupEmail setTextColor:[UIColor grayColor]];
-////       [_aSignupPassword setTextColor:[UIColor grayColor]];
-////       [_aSignupCity setTextColor:[UIColor grayColor]];
-
-    
 }
 
 - (IBAction)signupAct:(UIButton *)sender {
@@ -211,7 +223,7 @@
         
         pickerrow = [_aPickerviewoutlet selectedRowInComponent:0];
         Pickerstr = [pickerData objectAtIndex:pickerrow];
-        user[@"State"]=Pickerstr;
+        user[@"State"]=_Addstatetextfield.text;
         
     user[@"Gender"]=[_aSignupGender titleForSegmentAtIndex:[_aSignupGender selectedSegmentIndex]];
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error)

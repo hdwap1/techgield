@@ -676,14 +676,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <pickerView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7GB-PX-8mg">
-                                <rect key="frame" x="10" y="268" width="300" height="150"/>
+                                <rect key="frame" x="10" y="308" width="300" height="150"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Qtu-Oo-iTt" id="5gJ-Ee-v3R"/>
                                     <outlet property="delegate" destination="Qtu-Oo-iTt" id="TS1-xo-F36"/>
                                 </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phc-A7-Uoc">
-                                <rect key="frame" x="16" y="230" width="106" height="30"/>
+                                <rect key="frame" x="10" y="281" width="106" height="30"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <state key="normal" title="Add State:">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -692,11 +692,17 @@
                                     <action selector="addstateaction:" destination="Qtu-Oo-iTt" eventType="touchUpInside" id="Bq9-YT-lTn"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add State" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cFI-A7-LZT">
+                                <rect key="frame" x="16" y="227" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="SignUp" id="P1b-LY-Eab"/>
                     <connections>
+                        <outlet property="Addstatetextfield" destination="cFI-A7-LZT" id="zLc-He-reW"/>
                         <outlet property="aPickerviewoutlet" destination="7GB-PX-8mg" id="SEe-AQ-jp1"/>
                         <outlet property="aSignuBbtn" destination="pSv-Ga-xBH" id="uNB-yt-822"/>
                         <outlet property="aSignupCity" destination="fY2-tr-Sro" id="LDC-R2-JyC"/>
@@ -760,7 +766,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email sent successfully ,please check" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8W-Ed-r3j">
                                 <rect key="frame" x="16" y="385" width="289" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
