@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "DownPicker.h"
+#import <Parse/Parse.h>
 
 @interface Addnewtrip : UIViewController <UIScrollViewDelegate>
+{
+    PFObject *AddTripObj;
+}
 
 @property (strong, nonatomic) DownPicker *downPicker;
 @property (weak, nonatomic) IBOutlet UITextField *Addtripstate;
@@ -26,6 +30,9 @@
 - (IBAction)Uploadtripbtnaction:(UIButton *)sender;
 
 - (IBAction)Uploadimagebtnaction:(UIButton *)sender;
+@property (strong,nonatomic)PFObject *obj;
+@property (weak, nonatomic) IBOutlet UIImageView *addTripImage;
+@property (weak, nonatomic) IBOutlet UITextField *addTripName;
 
 
 @end

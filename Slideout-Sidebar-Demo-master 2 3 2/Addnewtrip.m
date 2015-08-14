@@ -18,7 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-  
+  [Parse setApplicationId:@"aRdKtgCLpKk9PTOpPgZUHIUutAFDxxOs9vCPIz93" clientKey:@"tAGtNESX10C3fa2sboyMOwO1JMTV9RhMvdyhIjvY"];
+    AddTripObj =[[PFObject alloc]initWithClassName:@"Place_By_User"];
+    
+    
+
     
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
@@ -98,9 +102,16 @@
 */
 
 - (IBAction)Uploadtripbtnaction:(UIButton *)sender {
+    [AddTripObj addObject:self.addTripName.text forKey:@"Place_Name"];
+    
+    [AddTripObj addObject:[PFUser currentUser].objectId forKey:@"Connect_user_id"];
+    NSLog(@"%@",[[PFUser currentUser]objectId]);
+    [AddTripObj saveInBackground];
+    
 }
 
 - (IBAction)Uploadimagebtnaction:(UIButton *)sender {
+    
 }
 - (IBAction)Addtripbarbtnaction:(UIBarButtonItem *)sender {
 }
