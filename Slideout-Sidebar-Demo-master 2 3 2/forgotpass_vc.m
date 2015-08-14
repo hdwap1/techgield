@@ -16,15 +16,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
-
+[Parse setApplicationId:@"aRdKtgCLpKk9PTOpPgZUHIUutAFDxxOs9vCPIz93" clientKey:@"tAGtNESX10C3fa2sboyMOwO1JMTV9RhMvdyhIjvY"];
+    
     self.aForgotPasswordEmail.textColor = [UIColor colorWithRed:0/256.0 green:84/256.0 blue:129/256.0 alpha:1.0];
     self.aForgotPasswordEmail.layer.cornerRadius=7;
     self.aForgotPasswordEmail.font = [UIFont fontWithName:@"Avenir Book" size:15];
     self.aForgotPasswordEmail.backgroundColor=[UIColor whiteColor];
     self.aForgotPasswordEmail.placeholder=@" Enter Your Email Address";
     
-
+    self.aSuccessMsg.hidden=YES;
     self.aForgotPasswordEmail.delegate=self;
     
 }
@@ -38,13 +40,28 @@
 - (IBAction)forgotPasswordAct:(UIButton *)sender {
 
  
+    [PFUser requestPasswordResetForEmailInBackground:
+     self.aForgotPasswordEmail.text
+                                               block:^(BOOL succeeded, NSError *error)
+     {
+        
+         if (!succeeded)
+         {
+             
+             UIAlertView *alrt = [[UIAlertView alloc] initWithTitle:@"Login/Register Required" message:@"Please login/Register to use thi feature" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles: @"Login/Register",nil];
+             
+             [alrt show];
+
+         }
+         else
+         {
+             self.aSuccessMsg.hidden=NO;
+             
+         }
+         
+              }];
     
-    
-    
-    UIAlertView *resetalert = [[UIAlertView alloc] initWithTitle:@"Reset Password" message:@"Check your email - we sent you an email to reset password.Thank you." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-    [resetalert show];
-    
-    
+
     
     
 }
