@@ -40,9 +40,15 @@
 		A944462A1B7B3F1000D7F587 /* EditProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = A94446291B7B3F1000D7F587 /* EditProfile.m */; };
 		A94446301B7B6BC700D7F587 /* resetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = A944462F1B7B6BC700D7F587 /* resetPassword.m */; };
 		A94B04221B796DFB002432A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A94B04201B796DFB002432A3 /* Main.storyboard */; };
-		A950EA8E1B7DF4FE00301462 /* homeicon.png in Resources */ = {isa = PBXBuildFile; fileRef = A950EA8D1B7DF4FE00301462 /* homeicon.png */; };
 		A95E56CA1B72E90100506FEC /* PlaceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A95E56C91B72E90100506FEC /* PlaceInfo.m */; };
 		A96601971B72116C0056ADD9 /* aPlaceListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A96601961B72116C0056ADD9 /* aPlaceListCell.m */; };
+		A96F0F051B7D4CE7003686CE /* Addnewtrip.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F0F041B7D4CE7003686CE /* Addnewtrip.m */; };
+		A96F0F071B7D57A4003686CE /* sample2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A96F0F061B7D57A4003686CE /* sample2.jpg */; };
+		A96F0F101B7D5EB3003686CE /* downArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = A96F0F091B7D5EB3003686CE /* downArrow.png */; };
+		A96F0F111B7D5EB3003686CE /* downArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96F0F0A1B7D5EB3003686CE /* downArrow@2x.png */; };
+		A96F0F121B7D5EB3003686CE /* downArrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A96F0F0B1B7D5EB3003686CE /* downArrow@3x.png */; };
+		A96F0F131B7D5EB3003686CE /* DownPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F0F0D1B7D5EB3003686CE /* DownPicker.m */; };
+		A96F0F141B7D5EB3003686CE /* UIDownPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F0F0F1B7D5EB3003686CE /* UIDownPicker.m */; };
 		A975DF681B762D2F004331DA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A975DF671B762D2F004331DA /* CoreLocation.framework */; };
 		A97B9A721B701AF70018A6E2 /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A97B9A711B701AF70018A6E2 /* Main2.storyboard */; };
 		A97B9A761B701BD90018A6E2 /* aSearch_vc.m in Sources */ = {isa = PBXBuildFile; fileRef = A97B9A751B701BD90018A6E2 /* aSearch_vc.m */; };
@@ -147,11 +153,20 @@
 		A944462E1B7B6BC700D7F587 /* resetPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resetPassword.h; sourceTree = "<group>"; };
 		A944462F1B7B6BC700D7F587 /* resetPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resetPassword.m; sourceTree = "<group>"; };
 		A94B04211B796DFB002432A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SidebarDemo/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A950EA8D1B7DF4FE00301462 /* homeicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeicon.png; sourceTree = "<group>"; };
 		A95E56C81B72E90100506FEC /* PlaceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceInfo.h; sourceTree = "<group>"; };
 		A95E56C91B72E90100506FEC /* PlaceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceInfo.m; sourceTree = "<group>"; };
 		A96601951B72116C0056ADD9 /* aPlaceListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aPlaceListCell.h; sourceTree = "<group>"; };
 		A96601961B72116C0056ADD9 /* aPlaceListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aPlaceListCell.m; sourceTree = "<group>"; };
+		A96F0F031B7D4CE7003686CE /* Addnewtrip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Addnewtrip.h; sourceTree = "<group>"; };
+		A96F0F041B7D4CE7003686CE /* Addnewtrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Addnewtrip.m; sourceTree = "<group>"; };
+		A96F0F061B7D57A4003686CE /* sample2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample2.jpg; sourceTree = "<group>"; };
+		A96F0F091B7D5EB3003686CE /* downArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downArrow.png; sourceTree = "<group>"; };
+		A96F0F0A1B7D5EB3003686CE /* downArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "downArrow@2x.png"; sourceTree = "<group>"; };
+		A96F0F0B1B7D5EB3003686CE /* downArrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "downArrow@3x.png"; sourceTree = "<group>"; };
+		A96F0F0C1B7D5EB3003686CE /* DownPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownPicker.h; sourceTree = "<group>"; };
+		A96F0F0D1B7D5EB3003686CE /* DownPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownPicker.m; sourceTree = "<group>"; };
+		A96F0F0E1B7D5EB3003686CE /* UIDownPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDownPicker.h; sourceTree = "<group>"; };
+		A96F0F0F1B7D5EB3003686CE /* UIDownPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDownPicker.m; sourceTree = "<group>"; };
 		A975DF671B762D2F004331DA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A97B9A711B701AF70018A6E2 /* Main2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main2.storyboard; sourceTree = "<group>"; };
 		A97B9A741B701BD90018A6E2 /* aSearch_vc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aSearch_vc.h; sourceTree = "<group>"; };
@@ -265,6 +280,8 @@
 			children = (
 				9E78A8D91B7C67A3006CB188 /* Tripmodule_vc.h */,
 				9E78A8DA1B7C67A3006CB188 /* Tripmodule_vc.m */,
+				A96F0F031B7D4CE7003686CE /* Addnewtrip.h */,
+				A96F0F041B7D4CE7003686CE /* Addnewtrip.m */,
 			);
 			name = Addtripmodule;
 			sourceTree = "<group>";
@@ -301,6 +318,7 @@
 				9EB6EAF21B63D526005F6D32 /* test3.jpg */,
 				9EB6EAF31B63D526005F6D32 /* test5.jpg */,
 				9EB6EAF61B63D526005F6D32 /* test8.jpg */,
+				A96F0F061B7D57A4003686CE /* sample2.jpg */,
 			);
 			name = launchscrimages;
 			sourceTree = "<group>";
@@ -451,6 +469,20 @@
 			name = aCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		A96F0F081B7D5EB3003686CE /* DownPicker */ = {
+			isa = PBXGroup;
+			children = (
+				A96F0F091B7D5EB3003686CE /* downArrow.png */,
+				A96F0F0A1B7D5EB3003686CE /* downArrow@2x.png */,
+				A96F0F0B1B7D5EB3003686CE /* downArrow@3x.png */,
+				A96F0F0C1B7D5EB3003686CE /* DownPicker.h */,
+				A96F0F0D1B7D5EB3003686CE /* DownPicker.m */,
+				A96F0F0E1B7D5EB3003686CE /* UIDownPicker.h */,
+				A96F0F0F1B7D5EB3003686CE /* UIDownPicker.m */,
+			);
+			path = DownPicker;
+			sourceTree = "<group>";
+		};
 		A97B9A731B701B9A0018A6E2 /* aSearchmodule */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,7 +552,7 @@
 		F4090B851A0F67D000651F6F = {
 			isa = PBXGroup;
 			children = (
-				A950EA8D1B7DF4FE00301462 /* homeicon.png */,
+				A96F0F081B7D5EB3003686CE /* DownPicker */,
 				9E78A8D81B7C673F006CB188 /* Addtripmodule */,
 				01E9DF5C1B7B0CB4002BA803 /* AnearMeModule */,
 				A975DF671B762D2F004331DA /* CoreLocation.framework */,
@@ -693,13 +725,14 @@
 				9EF887131B63A1C2000EB283 /* Home.png in Resources */,
 				9EB6EB131B63D647005F6D32 /* button.png in Resources */,
 				9EF887141B63A1C2000EB283 /* Logout.png in Resources */,
+				A96F0F101B7D5EB3003686CE /* downArrow.png in Resources */,
 				9EB6EB001B63D526005F6D32 /* test3.jpg in Resources */,
 				9EF887111B63A1C2000EB283 /* chat icon.png in Resources */,
 				9EB6EB011B63D526005F6D32 /* test5.jpg in Resources */,
 				9EB6EB161B63D647005F6D32 /* button45.png in Resources */,
 				F4090BA21A0F67D000651F6F /* LaunchScreen.xib in Resources */,
+				A96F0F121B7D5EB3003686CE /* downArrow@3x.png in Resources */,
 				9EF887121B63A1C2000EB283 /* email.png in Resources */,
-				A950EA8E1B7DF4FE00301462 /* homeicon.png in Resources */,
 				9EB6EB141B63D647005F6D32 /* button2.png in Resources */,
 				A97B9A791B7050BF0018A6E2 /* acancel.png in Resources */,
 				A97B9A7A1B7050BF0018A6E2 /* asearch.png in Resources */,
@@ -708,7 +741,9 @@
 				A94B04221B796DFB002432A3 /* Main.storyboard in Resources */,
 				9EF887151B63A1C2000EB283 /* Profile.png in Resources */,
 				A97B9A721B701AF70018A6E2 /* Main2.storyboard in Resources */,
+				A96F0F071B7D57A4003686CE /* sample2.jpg in Resources */,
 				9EB6EB041B63D526005F6D32 /* test8.jpg in Resources */,
+				A96F0F111B7D5EB3003686CE /* downArrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -743,6 +778,7 @@
 				A9AFDBC91B72297E0002D2E9 /* SDWebImageDownloader.m in Sources */,
 				9EB6EAED1B63D4CE005F6D32 /* signup_vc.m in Sources */,
 				A9AFDBD21B72297E0002D2E9 /* UIImageView+WebCache.m in Sources */,
+				A96F0F051B7D4CE7003686CE /* Addnewtrip.m in Sources */,
 				A9AFDBCD1B72297E0002D2E9 /* UIButton+WebCache.m in Sources */,
 				F4090BC31A0FD62A00651F6F /* MainViewController.m in Sources */,
 				9EF887181B63AAEE000EB283 /* aProfilevc.m in Sources */,
@@ -757,6 +793,7 @@
 				9EB6EAEE1B63D4CE005F6D32 /* splash_vc.m in Sources */,
 				A9AFDBCC1B72297E0002D2E9 /* SDWebImagePrefetcher.m in Sources */,
 				A9AFDBD01B72297E0002D2E9 /* UIImage+WebP.m in Sources */,
+				A96F0F131B7D5EB3003686CE /* DownPicker.m in Sources */,
 				A9AFDBCB1B72297E0002D2E9 /* SDWebImageManager.m in Sources */,
 				A9AFDBC51B72297E0002D2E9 /* NSData+ImageContentType.m in Sources */,
 				01E9DF621B7B0E52002BA803 /* NearMeTable.m in Sources */,
@@ -769,6 +806,7 @@
 				F4090BC61A0FD6F800651F6F /* SidebarTableViewController.m in Sources */,
 				A97B9A761B701BD90018A6E2 /* aSearch_vc.m in Sources */,
 				A9AFDBD31B72297E0002D2E9 /* UIView+WebCacheOperation.m in Sources */,
+				A96F0F141B7D5EB3003686CE /* UIDownPicker.m in Sources */,
 				A9AFDBD11B72297E0002D2E9 /* UIImageView+HighlightedWebCache.m in Sources */,
 				9EB6EAE81B63D4CE005F6D32 /* firstlaunch_vc.m in Sources */,
 			);
