@@ -40,6 +40,7 @@
 		A944462A1B7B3F1000D7F587 /* EditProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = A94446291B7B3F1000D7F587 /* EditProfile.m */; };
 		A94446301B7B6BC700D7F587 /* resetPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = A944462F1B7B6BC700D7F587 /* resetPassword.m */; };
 		A94B04221B796DFB002432A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A94B04201B796DFB002432A3 /* Main.storyboard */; };
+		A950EA8E1B7DF4FE00301462 /* homeicon.png in Resources */ = {isa = PBXBuildFile; fileRef = A950EA8D1B7DF4FE00301462 /* homeicon.png */; };
 		A95E56CA1B72E90100506FEC /* PlaceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A95E56C91B72E90100506FEC /* PlaceInfo.m */; };
 		A96601971B72116C0056ADD9 /* aPlaceListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A96601961B72116C0056ADD9 /* aPlaceListCell.m */; };
 		A975DF681B762D2F004331DA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A975DF671B762D2F004331DA /* CoreLocation.framework */; };
@@ -146,6 +147,7 @@
 		A944462E1B7B6BC700D7F587 /* resetPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resetPassword.h; sourceTree = "<group>"; };
 		A944462F1B7B6BC700D7F587 /* resetPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resetPassword.m; sourceTree = "<group>"; };
 		A94B04211B796DFB002432A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SidebarDemo/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A950EA8D1B7DF4FE00301462 /* homeicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeicon.png; sourceTree = "<group>"; };
 		A95E56C81B72E90100506FEC /* PlaceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceInfo.h; sourceTree = "<group>"; };
 		A95E56C91B72E90100506FEC /* PlaceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceInfo.m; sourceTree = "<group>"; };
 		A96601951B72116C0056ADD9 /* aPlaceListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aPlaceListCell.h; sourceTree = "<group>"; };
@@ -518,6 +520,7 @@
 		F4090B851A0F67D000651F6F = {
 			isa = PBXGroup;
 			children = (
+				A950EA8D1B7DF4FE00301462 /* homeicon.png */,
 				9E78A8D81B7C673F006CB188 /* Addtripmodule */,
 				01E9DF5C1B7B0CB4002BA803 /* AnearMeModule */,
 				A975DF671B762D2F004331DA /* CoreLocation.framework */,
@@ -696,6 +699,7 @@
 				9EB6EB161B63D647005F6D32 /* button45.png in Resources */,
 				F4090BA21A0F67D000651F6F /* LaunchScreen.xib in Resources */,
 				9EF887121B63A1C2000EB283 /* email.png in Resources */,
+				A950EA8E1B7DF4FE00301462 /* homeicon.png in Resources */,
 				9EB6EB141B63D647005F6D32 /* button2.png in Resources */,
 				A97B9A791B7050BF0018A6E2 /* acancel.png in Resources */,
 				A97B9A7A1B7050BF0018A6E2 /* asearch.png in Resources */,

@@ -775,7 +775,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7v-Q8-qSW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3491" y="-988"/>
+            <point key="canvasLocation" x="-3398" y="-982"/>
         </scene>
         <!--Splash vc-->
         <scene sceneID="JOs-oi-Jfp">

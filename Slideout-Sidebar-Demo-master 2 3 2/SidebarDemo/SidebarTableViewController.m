@@ -33,7 +33,9 @@
         menuItems = @[@"title", @"Home", @"Loginsignup"];
     
     }
-
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"test8.jpg"]];
+ 
     
    // menuItems = @[@"title", @"Home",@"Profile",@"Messages",@"Logout"];
 }
@@ -59,7 +61,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *CellIdentifier = [menuItems objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
+   cell.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"test8.jpg"]];
     return cell;
 }
 

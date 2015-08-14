@@ -27,6 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor colorWithRed:0.710 green:0.710 blue:0.616 alpha:1.000];
     testLatArry=[[NSMutableArray alloc]init];
     
     
@@ -97,6 +98,7 @@
     //
     //
     //    }];
+    self.aNearMeTable.backgroundColor=self.view.backgroundColor = [UIColor colorWithRed:0.710 green:0.710 blue:0.616 alpha:1.000];
     
 }
 
@@ -130,13 +132,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    
+
     NearMeTable *cell=[tableView dequeueReusableCellWithIdentifier:@"nearme"];
+    cell.aNearMeIndex.textColor=[UIColor colorWithRed:220 green:220 blue:203 alpha:1.000];
+    cell.aNearMePlaceCity.textColor=[UIColor colorWithRed:220 green:220 blue:203 alpha:1.000];
+    cell.aNearMePlaceName.textColor=[UIColor colorWithRed:220 green:220 blue:203 alpha:1.000];
     cell.aNearMePlaceName.text=[[aNearMePlacesArry objectAtIndex:indexPath.row]objectForKey:@"Name"];
     cell.aNearMePlaceCity.text=[[aNearMePlacesArry objectAtIndex:indexPath.row]objectForKey:@"City"];
     cell.aNearMeIndex.text=[NSString stringWithFormat:@"%ld",(long)indexPath.row +1];
     
-    
+    cell.backgroundColor= [UIColor colorWithRed:0.710 green:0.710 blue:0.616 alpha:1.000];
     
     
     //    self.strLat=[[aNearMePlacesArry objectAtIndex:indexPath.row]objectForKey:@"Lattitude"];

@@ -48,7 +48,7 @@
          if (!succeeded)
          {
              
-             UIAlertView *alrt = [[UIAlertView alloc] initWithTitle:@"Login/Register Required" message:@"Please login/Register to use thi feature" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles: @"Login/Register",nil];
+             UIAlertView *alrt = [[UIAlertView alloc] initWithTitle:@"Email incorrect" message:@"Please check your email" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles: @"Login/Register",nil];
              
              [alrt show];
 

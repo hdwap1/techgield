@@ -27,10 +27,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+   self.view.backgroundColor= [UIColor colorWithRed:0.710 green:0.710 blue:0.616 alpha:1.000];
+ self.Mainviewscroll.backgroundColor=[UIColor colorWithRed:0.710 green:0.710 blue:0.616 alpha:1.000];
     self.navigationItem.title=[self.array objectForKey:@"Name"];
+    self.navigationController.navigationBar.tintColor=[UIColor colorWithRed:107/255 green:107/255 blue:78/255 alpha:1.000];
     
-    aManager=[[CLLocationManager alloc]init];
+    [self.navigationController.navigationBar
+     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:107/255 green:107/255 blue:78/255 alpha:1.0]}];
+    //self.navigationController.navigationBar.barTintColor=[UIColor colorWithRed:107 green:107 blue:78 alpha:1.0];
+    
+                                  aManager=[[CLLocationManager alloc]init];
     aManager.delegate=self;
     if([aManager respondsToSelector:@selector(requestAlwaysAuthorization)])
     {
@@ -59,7 +65,7 @@
     
     [_Mainviewscroll setContentSize:(CGSizeMake(_Mainviewscroll.frame.size.width,980))];
     
-    _Mainviewscroll.backgroundColor = [UIColor whiteColor];
+    _Mainviewscroll.backgroundColor = [UIColor colorWithRed:0.710 green:0.710 blue:0.616 alpha:1.000];
     
     
     //    NSLog(@"%@",aSearch.aselectedPlace);
@@ -86,6 +92,14 @@
      aMapview_VC *mapviews=[aStory instantiateViewControllerWithIdentifier:@"mapviewvc"];
     mapviews.alat=[NSString stringWithFormat:@"%@",[self.array objectForKey:@"Longitude"]];
     mapviews.along=[NSString stringWithFormat:@"%@",[self.array objectForKey:@"Longitude"]];
+    
+    self.mainviewname.textColor=[UIColor colorWithRed:220 green:220 blue:203 alpha:1.000];
+    self.mainviewcity.textColor=[UIColor colorWithRed:220 green:220 blue:203 alpha:1.000];
+    self.mainviewlatitude.textColor=[UIColor colorWithRed:220 green:220 blue:203 alpha:1.000];
+    self.mainviewlongitude.textColor=[UIColor colorWithRed:220 green:220 blue:203 alpha:1.000];
+    self.mainplacedescription.textColor=[UIColor colorWithRed:220 green:220 blue:203 alpha:1.000];
+    self.mainplacedescription.backgroundColor=[UIColor colorWithRed:0.710 green:0.710 blue:0.616 alpha:1.000];
+    self.mainviewstate.textColor=[UIColor colorWithRed:220 green:220 blue:203 alpha:1.000];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -106,10 +120,10 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)maincv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    
+    //maincv.backgroundColor=[UIColor colorWithRed:0.710 green:0.710 blue:0.616 alpha:1.000];
     aPlaceListCell *cell = [maincv dequeueReusableCellWithReuseIdentifier:@"maincollectionview" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor whiteColor];
-    
+    cell.backgroundColor = [UIColor colorWithRed:0.710 green:0.710 blue:0.616 alpha:1.000];
+
     
     return cell;
 }
