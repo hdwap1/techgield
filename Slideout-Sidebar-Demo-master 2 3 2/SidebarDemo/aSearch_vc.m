@@ -120,6 +120,11 @@ self.view.backgroundColor = [UIColor colorWithRed:0.710 green:0.710 blue:0.616 a
                          
                      } completion:^(BOOL finished) {
                          
+<<<<<<< HEAD
+=======
+                         
+                         
+>>>>>>> 506553899d4e3830b754992c2cf585dcc496a65c
                         
                      }];
     
