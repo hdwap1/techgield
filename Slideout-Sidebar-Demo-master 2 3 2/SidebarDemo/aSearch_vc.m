@@ -39,7 +39,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+self.view.backgroundColor = [UIColor colorWithRed:0.710 green:0.710 blue:0.616 alpha:1.000];
+ //self.view.backgroundColor=[UIColor colorWithRed:220/255 green:220/255 blue:203/255 alpha:1.000];
     [Parse setApplicationId:@"aRdKtgCLpKk9PTOpPgZUHIUutAFDxxOs9vCPIz93" clientKey:@"tAGtNESX10C3fa2sboyMOwO1JMTV9RhMvdyhIjvY"];
     allPlaces=[[NSArray alloc]init];
     aPlaceData=[[NSArray alloc]init];
@@ -83,7 +84,9 @@
     
     
     Timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(AutoScroll) userInfo:nil repeats:YES];
-    
+    self.collectionView.backgroundColor=[UIColor colorWithRed:0.710 green:0.710 blue:0.616 alpha:1.000];
+     self.AcollectionView.backgroundColor= [UIColor colorWithRed:0.710 green:0.710 blue:0.616 alpha:1.000];
+  
 }
 
 
@@ -189,7 +192,9 @@ else{
     aPlaceListCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"Acollectionview" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
  
-   
+       cell.aPlaceCity.textColor= [UIColor colorWithRed:220 green:220 blue:203 alpha:1.000];
+       cell.aPlaceName.textColor=[UIColor colorWithRed:220 green:220 blue:203 alpha:1.000];
+       
     cell.aPlaceCity.text=[[aPlaceData objectAtIndex:indexPath.row] objectForKey:@"City"];
     cell.aPlaceName.text=[[aPlaceData objectAtIndex:indexPath.row] objectForKey:@"Name"];
     
@@ -199,7 +204,7 @@ else{
     
    
     [cell.aPlaceImage sd_setImageWithURL:[NSURL URLWithString:imageFile.url] placeholderImage:[UIImage imageNamed:@"search.png"]];
-    
+    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"test8.jpg"]];
        return cell;
    }
    
@@ -216,7 +221,7 @@ else{
     
     
     [cell.aScrollImage sd_setImageWithURL:[NSURL URLWithString:imageFile.url] placeholderImage:[UIImage imageNamed:@"search.png"]];
-    
+    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"test8.jpg"]];
     
     return cell;
 }

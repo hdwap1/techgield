@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *aForgotPasswordEmail;
 
 @property (weak, nonatomic) IBOutlet UIButton *aforgotResetBtn;
+@property (weak, nonatomic) IBOutlet UILabel *aSuccessMsg;
 
 
 - (IBAction)forgotPasswordAct:(UIButton *)sender;

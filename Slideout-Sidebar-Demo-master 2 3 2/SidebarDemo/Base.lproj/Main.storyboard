@@ -757,18 +757,25 @@
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email sent successfully ,please check" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8W-Ed-r3j">
+                                <rect key="frame" x="16" y="385" width="289" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="qmI-Cr-tN4"/>
                     <connections>
                         <outlet property="aForgotPasswordEmail" destination="x9D-08-AFU" id="tzT-1X-M7L"/>
+                        <outlet property="aSuccessMsg" destination="o8W-Ed-r3j" id="jUS-0b-NBV"/>
                         <outlet property="aforgotResetBtn" destination="ff2-MX-znp" id="CDS-4L-4oO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z7v-Q8-qSW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3491" y="-988"/>
+            <point key="canvasLocation" x="-3398" y="-982"/>
         </scene>
         <!--Splash vc-->
         <scene sceneID="JOs-oi-Jfp">
