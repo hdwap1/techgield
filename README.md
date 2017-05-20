@@ -153,3 +153,5 @@ func compressImage(_ image:UIImage) -> Data
 }
 
 
+ objURLManager.URLCall(method: .get, parameters: nil, url: Constants.API_CURRENCY, completion: { (resultDict) in
+          //  let json = JSON(resultDict)
