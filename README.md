@@ -13,6 +13,20 @@ class URLManager : NSObject
     
     // var delegate : URLManagerDelegate?
     override init() {
+    
+      for obj in allLocations
+        {
+            let currentLat = (obj["lat"] as! NSString).doubleValue
+            let currentLong = (obj["lng"] as! NSString).doubleValue
+            let currentCLLocation = CLLocation(latitude: currentLat, longitude: currentLong)
+            
+            currentTypeLocations.append(currentCLLocation)
+        }
+            
+       
+        
+        let closest = currentTypeLocations.sorted(by:
+        { $0.distance(from: currentLocation) < $1.distance(from: currentLocation) })
         
     }
     
